@@ -1,0 +1,30 @@
+<!--酒店基本信息 start-->
+<view class="hotel">
+    <view class="hotel_name">
+        <text>{{Ext.hotelname}}</text>
+    </view>
+    <view class="hotel_f">
+        <text>{{Ext.roomname}}</text>
+    </view>
+    <view class="hotel_time">
+        <text>入住：{{Ext.inTime}}</text>
+    </view>
+    <view class="hotel_price">
+        <text class="price_title">应付金额：</text>
+        <text class="price">￥{{PaymentAmount}}</text>
+    </view>
+</view>
+<!--酒店基本信息 end-->
+
+<!--支付方式 start-->
+<view class="hotel_pay clear">
+    <text>微信支付</text>
+    <image class="selected" src="https://webapi.jsjinfo.cn/smallApp/hotel/selected.png" />
+</view>
+<!--支付方式 end-->
+
+<!--支付按钮 start-->
+<view class="hotel_btn clear">
+     <button catchtap="pay" disabled="{{buttonclick}}" class="payinput">去支付</button>
+</view>
+<!--支付按钮 end-->

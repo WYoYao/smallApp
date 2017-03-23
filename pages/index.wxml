@@ -1,0 +1,58 @@
+<!--main start-->
+<view class="main">
+    <!--logo start-->
+    <view class="logo">
+        <image src="https://webapi.jsjinfo.cn/smallApp/logo.png" class="logo_img"></image>
+    </view>
+    <!--logo end-->
+
+    <!--main_con start-->
+    <view class="main_con">
+        <!--酒店-->
+        <view class="main_dl" bindtap="to_hotel">
+            <view class="main_dt">
+                <image src="https://webapi.jsjinfo.cn/smallApp/hotel.png" class="hotel"></image>
+            </view>
+            <view class="main_dd">
+                <view class="main_title">
+                    <text>酒店</text>
+                </view>
+                <view class="main_list">
+                    <text>特价酒店</text>
+                    <text class="list_line">|</text>
+                    <text>商旅出行</text>
+                </view>
+            </view>
+        </view>
+
+        <view class="main_dl main_last" bindtap="to_viphall">
+            <view class="main_dt">
+                <image src="https://webapi.jsjinfo.cn/smallApp/viphall.png" class="hotel"></image>
+            </view>
+            <view class="main_dd">
+                <view class="main_title">
+                    <text>贵宾厅</text>
+                </view>
+                <view class="main_list">
+                    <text>VIP安检通道</text>
+                    <text class="list_line">|</text>
+                    <text>休息</text>
+                    <text class="list_line">|</text>
+                    <text>餐饮</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--main_con end-->
+</view>
+<!--main end-->
+
+<!--order start-->
+<view class="order"  bindtap="to_order" hidden="{{!jsjid}}">
+    <view class="order_con">
+        <image src="https://webapi.jsjinfo.cn/smallApp/icon_jx.png" class="icon_jx"></image>
+        <image src="https://webapi.jsjinfo.cn/smallApp/icon_order.png" class="order_img"></image>
+        <text class="order_text">我的订单</text>
+    </view>
+</view>
+<!--order end-->

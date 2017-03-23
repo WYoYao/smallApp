@@ -1,0 +1,8 @@
+<!--main start-->
+<view class="spot_list">
+    <view wx:for="{{listdatas}}" wx:key="unique" class="spot_li" data-json="{{item.data}}" bindtap="bindClick">
+        <view class="icon_spot spot_wxz"></view>
+        <text>{{item.name}}</text>
+    </view>
+</view>
+<!--main end-->

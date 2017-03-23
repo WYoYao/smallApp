@@ -1,0 +1,83 @@
+page{
+    background: #f5f5f5;
+}
+
+/*logo*/
+.logo{
+    width: 100%;
+    padding: 135rpx 0;
+    background: #333037;
+    text-align: center;
+}
+.logo_img{
+    width: 304rpx;
+    height: 240rpx;
+}
+/*logo end*/
+
+/*main_con*/
+.main_dl{
+    background: #fff;
+    padding: 60rpx 0 75rpx;
+    margin-bottom: 20rpx;
+}
+.main_last{
+    margin-bottom: 0;
+}
+.main_dt{
+    text-align: center;
+}
+.hotel{
+    width: 112rpx;
+    height: 112rpx;
+}
+.main_title{
+    font-size: 45rpx;
+    color: #202020;
+    text-align: center;
+}
+.main_list{
+    font-size: 24rpx;
+    color: #666;
+    text-align: center;
+}
+.list_line{
+    font-size: 20rpx;
+    color: #d2d2d2;
+    margin: 0 20rpx;
+}
+/*main_con end*/
+
+/*order*/
+.order{
+    width: 180rpx;
+    height: 65rpx;
+    background: #f2435a;
+    position: fixed;
+    top: 384rpx;
+    right: 0;
+    z-index: 100;
+}
+.order_con{
+    position: relative;
+}
+.icon_jx{
+    width: 11rpx;
+    height: 65rpx;
+    position: absolute;
+    top: 0;
+    left: -10rpx;
+}
+.order_img{
+    width: 33rpx;
+    height: 36rpx;
+    margin: 15rpx 14rpx;
+    float: left;
+}
+.order_text{
+    font-size: 28rpx;
+    color: #ffffff;
+    line-height: 65rpx;
+    float: left;
+}
+/*order end*/

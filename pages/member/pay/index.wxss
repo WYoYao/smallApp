@@ -1,0 +1,23 @@
+page{ background: #f5f5f5;}
+.clear{ clear: both;}
+
+/*hotel*/
+.hotel{ padding: 0 20rpx; background: #fff; border-bottom: 2rpx solid #dedede;}
+.hotel_name{ font-size: 36rpx; color: #333; padding-top:20rpx;}
+.hotel_f{ font-size: 30rpx; color: #333; padding-top:20rpx;}
+.hotel_time{ font-size: 28rpx; color: #666; padding-top:20rpx;}
+.hotel_price{ padding: 20rpx 0 30rpx;}
+.price_title{ font-size: 28rpx; color: #333;}
+.price{ font-size: 36rpx; color: #ff8420;}
+/*hotel end*/
+
+/*hotel_pay*/
+.hotel_pay{ width: 100%; height: 120rpx; line-height: 120rpx; font-size:18px; color: #333;  margin: 40rpx 0 80rpx; background: #fff url(https://webapi.jsjinfo.cn/smallApp/WeChat.png) no-repeat 60rpx center; background-size: 55rpx 55rpx; border-top: 2rpx solid #dedede; border-bottom: 2rpx solid #dedede;}
+.hotel_pay text{ padding-left: 160rpx;}
+/*hotel_pay end*/
+
+/*hotel_btn*/
+.hotel_btn{ margin: 0 30rpx;}
+.payinput{ width: 100%; height: 88rpx; line-height: 88rpx; text-align: center; font-size: 32rpx; color: #fff; font-weight: 700; font-family: "microsoft yahei",arial; background: #ff8420; border: 0; border-radius: 10rpx;}
+/*hotel_btn end*/
+.selected{width: 22px;height: 22px;float: right;margin: 36rpx;}

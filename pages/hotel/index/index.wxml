@@ -1,0 +1,82 @@
+
+<!--<import src="../components/city.wxml"/>-->
+<!--<include src="city.wxml"/>-->
+
+<!--<template is="city"/>-->
+<!--<view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>-->
+<!--<view class="group">-->
+<view class="content">
+  <view class="address">
+    <view class="addresss_key">
+      <text>目的地</text>
+    </view>
+    <view class="addresss_value" bindtap="handle_city_list">
+      <text>{{CityName}}</text>
+    </view>
+  </view>
+
+  <view class="date clear h128">
+    <view class="date_left">
+      <text class="date_text">入住</text>
+      <picker style="float:left" mode="date" value="{{state.StartDate}}" start="{{StartSelectStartDate}}" end="{{StartSelectEndDate}}" bindchange="bindStartDateChange">
+        <text class="date_value">{{StartDate.Month}}月{{StartDate.Day}}日</text>
+      </picker>
+      <text class="date_now">{{StartDate.forNow}}</text>
+    </view>
+    <view class="date_total">
+      <text>共{{totaldays}}晚</text>
+    </view>
+    <view class="date_left">
+      <text class="date_text">离店</text>
+      <picker style="float:left" mode="date" value="{{state.EndtDate}}" start="{{EndSelectStartDate}}" end="{{EndSelectEndDate}}" bindchange="bindEndDateChange">
+        <text class="date_value">{{EndtDate.Month}}月{{EndtDate.Day}}日</text>
+      </picker>
+      <text class="date_now">{{EndtDate.forNow}}</text>
+    </view>
+    
+  </view>
+
+  <view class="keyword clear">
+    <view class="addresss_key">
+      <text>关键字</text>
+    </view>
+    <view class="addresss_value" bindtap="handle_keyword_list">
+      <text wx:if="{{keyWorldName}}">{{keyWorldName}}</text>
+      <text wx:if="{{!keyWorldName}}">不限</text>
+    </view>
+    <image class="close1" wx:if="{{keyWorldName}}" src="https://webapi.jsjinfo.cn/smallApp/close1.png" bindtap="clearSearch"></image>
+  </view>
+  <!--<view class="star">
+    <view class="addresss_key">
+      <text>星级价格</text>
+    </view>
+    <view class="addresss_value">
+      <text>不限</text>
+    </view>
+  </view>-->
+  <view class="button">
+    <button type="default" style="background-color: #ff8522;color: #fff;" id="search" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="handle_submit" hover-class="other-button-hover"> 查询 </button>
+  </view>
+</view>
+<view class="bottom">
+  <view class="index_page" bindtap="goIndex">
+    <image class="icon" src="https://webapi.jsjinfo.cn/smallApp/hotel/house.png"></image>
+    <text>主页</text>
+  </view>
+  <view class="index_hotel" bindtap="goHotelList">
+    <image class="icon" src="https://webapi.jsjinfo.cn/smallApp/hotel/hotel_icon.png"></image>
+    <text>订单</text>
+  </view>
+  <view class="index_viphall" bindtap="goVIPHall">
+    <image class="icon" src="https://webapi.jsjinfo.cn/smallApp/hotel/viphall.png"></image>
+    <text>贵宾厅</text>
+  </view>
+</view>

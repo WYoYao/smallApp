@@ -1,0 +1,66 @@
+
+<!--seach start-->
+<view class="seach" style="display:none">
+  <view class="seach_input">
+    <view class="search_text">
+      <input type="text" name="" placeholder="搜索订单" value="" class="input_val" />
+    </view>
+  </view>
+</view>
+
+<!--seach end-->
+
+<!--main start-->
+<view>
+  <view class="order_title">
+    <view class="order_title_bg" wx:if="{{checkIndex > 0}}">
+      <view class="order_title_item order_title_active" catchtap="Switch" data-index="1">近三个月订单</view>
+      <view class="order_title_item" catchtap="Switch" data-index="-1">全部订单</view>
+    </view>
+    <view class="order_title_bg" wx:if="{{checkIndex < 0}}">
+      <view class="order_title_item" catchtap="Switch" data-index="1">近三个月订单</view>
+      <view class="order_title_item order_title_active" catchtap="Switch" data-index="-1">全部订单</view>
+    </view>
+  </view>
+</view>
+<view class="order_main">
+  <view class="order_con" wx:if="{{listLength > 0 }}">
+    <view class="order_con_section" wx:for="{{hotelList}}">
+      <view class="section_con" catchtap="JumpPage" data-orderid="{{item.OrderID}}">
+        <view class="order_number">
+          <view class="order_number_left">
+            <text>￥{{item.TotalPrice}}</text>
+          </view>
+          <view class="order_number_right right_font">
+            <text>{{item.OrderStatus}}</text>
+          </view>
+        </view>
+        <view class="order_number">
+          <text class="order_number_con">
+            {{item.HotelName}}
+          </text>
+        </view>
+        <view class="order_number">
+          <view class="order_number_left">
+            <text>{{item.ArrivalTime}}</text>
+            <text> - </text>
+            <text>{{item.CheckoutTime}}</text>
+          </view>
+          <view class="order_number_right right_fonts">
+            <text>共{{item.Days}}晚 共{{item.RoomNum}}间</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{listLength == 0 }}" class="OrderList_page">
+    <view class="page_dt">
+      <image src="https://webapi.jsjinfo.cn/smallApp/member/ic_hotel_no_data.png" class="page_dt_img"></image>
+    </view>
+    <view class="page_dd">
+      <text>暂时没有相关订单</text>
+    </view>
+  </view>
+</view>
+
+<!--mian end-->

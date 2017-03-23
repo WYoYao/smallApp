@@ -1,0 +1,291 @@
+.clear{
+    clear: both;
+}
+
+/*搜索*/
+.seach{
+    position: fixed;
+    top: 0;
+    left: 0rpx;
+    right: 0rpx;
+    height: 92rpx;
+    z-index: 10;
+    border-bottom: 2rpx solid #E7E7E7;
+}
+.seach:before {
+    position: absolute;
+    content: "";
+    background-color: #fff;
+    left: 50%;
+    top: 34rpx;
+    margin-left: -130rpx;
+    width: 14rpx;
+    height: 14rpx;
+    -moz-border-radius: 20rpx;
+    -webkit-border-radius: 20rpx;
+    border-radius: 20rpx;
+    border: 2rpx solid #BFBFBF;
+    z-index: 11;
+}
+.seach:after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 52rpx;
+    margin-left: -116rpx;
+    width: 8rpx;
+    height: 0rpx;
+    border-top: 2rpx solid #BFBFBF;
+    z-index: 10;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+.seach .seach_con {
+    display: block;
+    background-color: #E7E7E7;
+    height: 60rpx;
+    padding: 16rpx 0;
+}
+.seach_con input {
+    margin: 0 16rpx;
+    background-color: #fff;
+    height: 60rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    position: relative;
+    padding: 0 10rpx 0 20rpx;
+    /*text-indent: 20rpx;*/
+}
+/*搜索 end*/
+
+/*城市列表*/
+.slider_content{
+    margin-top:88rpx;
+}
+.slider_ul{
+    display: block;
+}
+
+.jianpin {
+    display: block;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #F9F9F9;
+    color: #999;
+    font-size: 28rpx;
+    padding-left: 36rpx;
+    margin-right: 56rpx;
+    font-family: "microsoft yahei",arial;
+}
+.slider_li_ul{
+    display: block;
+    margin-right: 56rpx;
+    background: #fff;
+    border-top: 2rpx solid #E5E5E5;
+}
+.city_li {
+    display: block;
+    height: 84rpx;
+    line-height: 84rpx;
+    border-bottom: 2rpx solid #E5E5E5;
+    position: relative;
+}
+.city_height{
+    float: left;
+    height: auto;
+    border-bottom: 0;
+    margin-bottom: 24rpx;
+}
+.city_list{
+    display: block;
+    float: left;
+    margin: 24rpx 0 0 24rpx;
+    width: 200rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    border: 1rpx solid #dedede;
+    border-radius: 10rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.city {
+    display: block;
+    height: 84rpx;
+    font-size: 28rpx;
+    color: #333;
+    margin: 0 80rpx 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 4em;
+    /*text-indent: 4em;*/
+}
+.select:before{
+    position: absolute;
+    content: "";
+    top: 48rpx;
+    right: 50rpx;
+    width: 16rpx;
+    height: 0rpx;
+    border-top: 4rpx solid #039FF0;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+.select:after {
+    position: absolute;
+    content: "";
+    top: 40rpx;
+    right: 26rpx;
+    width: 32rpx;
+    height: 0rpx;
+    border-bottom: 4rpx solid #039FF0;
+    transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+/*城市列表 end*/
+
+/*定位常用*/
+.slider_nav {
+    position: fixed;
+    top: 260rpx;
+    right: 0rpx;
+    width: 60rpx;
+}
+.slider_nav .nav_ul_li {
+    display: block;
+    text-align: center;
+    color: #039FF0;
+    line-height: 30rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    font-family: "microsoft yahei",arial;
+}
+/*定位常用 end*/
+
+/*搜索弹层*/
+.seach_layer_bg{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    position: fixed;
+    top: 0rpx;
+    right: 0rpx;
+    bottom: 0rpx;
+    left: 0rpx;
+    z-index: 200;
+}
+.seach_layer_con{
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0rpx;
+    right: 0rpx;
+    left: 0rpx;
+    z-index: 201;
+}
+.text_left{
+    width: 100%;
+    height: 92rpx;
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0rpx;
+    right: 0rpx;
+    left: 0rpx;
+    border-bottom: 2rpx solid #E7E7E7;
+}
+.text_left_p{
+    display: block;
+    background: #E7E7E7;
+    height: 60rpx;
+    padding: 18rpx 120rpx 18rpx 16rpx;
+}
+.seach_text{
+    width: 100%;
+    background: #fff;
+    height: 60rpx;
+    text-align: left;
+    margin: 16rxp 0;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    position: relative;
+    padding: 0 10rpx 0 20rpx;
+    /*text-indent: 20rpx;*/
+}
+.seach_btn{
+    position: absolute;
+    top: 0rpx;
+    right: 0rpx;
+    width: 100rpx;
+    font-size: 28rpx;
+    height: 92rpx;
+    line-height: 92rpx;
+    text-align: center;
+    color: #3399ff;
+    border: 0rpx;
+    background: transparent;
+}
+/*搜索框 end*/
+
+/*搜索结果*/
+.seach_result{
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 92rpx;
+    right: 0;
+    bottom: 0;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.result_li{
+    padding: 0 40rpx 0 40rpx;
+    line-height: 84rpx;
+    border-bottom: 2rpx solid #cccccc;
+    background: #fff;
+}
+.result_li text{
+    display: block;
+    height: 84rpx;
+    font-size: 30rpx;
+    color: #5C6364;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.result_none{
+    font-size: 32rpx;
+    width: 100%;
+    left: 0;
+    height: 40rpx;
+    line-height: 40rpx;
+    position: fixed;
+    top: 50%;
+    margin-top: -20rpx;
+    text-align: center;
+    /*display: none;*/
+}
+/*搜索弹层 end*/
+
+.searchButton{
+    padding-left: 50rpx;
+    margin: 0 16rpx;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30rpx;
+    line-height: 56rpx;
+    color: #e1e1e1;
+}

@@ -1,0 +1,364 @@
+page{
+    font-family: "microsoft yahei",arial;
+    background: #f5f5f5;
+}
+.clear{
+    clear: both;
+}
+/*header*/
+.header{
+    padding: 35rpx 27rpx 0;
+}
+.room_name{
+    font-size: 36rpx;
+    color: #484e4f;
+    margin-bottom: 35rpx;
+}
+.room_fx{
+    font-size: 30rpx;
+    color: #484e4f;
+    margin-bottom: 35rpx;
+}
+.room_bh{
+    font-size: 28rpx;
+    color: #737a7b;
+    margin-bottom: 35rpx;
+}
+.room_bh text{
+    margin-right: 20rpx;
+}
+/*header end*/
+
+/*main*/
+.main{
+    width: 100%;
+    margin-bottom: 100rpx;
+}
+.section{
+    width: 100%;
+    background: #fff;
+    border-top: 2rpx solid #dedede;
+    border-bottom: 2rpx solid #dedede;
+    margin-bottom: 20rpx;
+}
+.section_p{
+    margin-left: 35rpx;
+    border-bottom: 2rpx solid #dedede;
+    /*height: 88rpx;*/
+    overflow: hidden;
+}
+.section_p:last-child{
+    border-bottom: 0;
+}
+.section_left{
+    width: 25%;
+    float: left;
+}
+.section_left text{
+    font-size: 32rpx;
+    color: #9a9a9a;
+    line-height: 88rpx;
+}
+.section_right{
+    width: 75%;
+    float: left;
+    position: relative;
+}
+.section_right_con{
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 30rpx;
+    color: #484e4f;
+    border-bottom: 2rpx solid #dedede;
+}
+.section_right_con:last-child{
+    border-bottom: 0;
+}
+.icon{
+    display: block;
+    width: 13rpx;
+    height: 26rpx;
+    background: url(https://webapi.jsjinfo.cn/smallApp/hotel/icon_jt.png) no-repeat;
+    background-size: 13rpx 26rpx;
+    position: absolute;
+    top: 50%;
+    margin-top: -13rpx;
+    right: 27rpx;
+}
+.telinput{
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 30rpx;
+    color: #484e4f;
+    /*margin: 14rpx 0;*/
+}
+.telinput::-webkit-input-placeholder{
+    font-size: 30rpx;
+    color: #999;
+    font-family: "microsoft yahei",arial;
+}
+.telinput:focus{
+    color: #fff;
+}
+
+.section_text{
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    color: #999;
+    padding-left: 30rpx;
+}
+.text_tip{
+    color: #333;
+    /*margin-left: 35rpx;*/
+}
+.text_tel{
+    color: #ff7022;
+}
+/*main end*/
+
+/*footer*/
+.footer{
+    width: 100%;
+    height: 90rpx;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    border-top: 2rpx solid #dedede;
+}
+.footer_left{
+    width: 60%;
+    float: left;
+}
+.footer_text{
+    float: left;
+    line-height: 90rpx;
+    margin-left: 20rpx;
+}
+.text_priceZ{
+    font-size: 30rpx;
+    color: #6c6c6c;
+    float: left;
+}
+.text_price{
+    float: left;
+    margin-left: 10rpx;
+    font-size: 34rpx;
+    color: #ff7022;
+}
+.text_priceQ{
+    font-size: 24rpx;
+}
+.footer_details{
+    float: right;
+    margin-right: 30rpx;
+    line-height: 90rpx;
+    font-size: 24rpx;
+    color: #6c6c6c;
+}
+.footer_hide{
+    background: url(https://webapi.jsjinfo.cn/smallApp/hotel/icon_show.png) no-repeat right;
+    background-size: 23rpx 13rpx;
+    padding-right: 33rpx;
+}
+.footer_show{
+    background: url(https://webapi.jsjinfo.cn/smallApp/hotel/icon_hide.png) no-repeat right;
+    background-size: 23rpx 13rpx;
+    padding-right: 33rpx;
+}
+.footer_right{
+    width: 40%;
+    float: left;
+}
+.footer_btn{
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+    font-family: "microsoft yahei",arial;
+    background: #ff8522;
+}
+/*footer end*/
+
+
+/*明细弹层*/
+.details_bg{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+}
+.details_con{
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 92rpx;
+    z-index: 100;
+}
+.details_p{
+    margin: 0 25rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+}
+.details_left{
+    float: left;
+    font-size: 32rpx;
+    color: #484e4f;
+}
+.details_price{
+    float: right;
+    font-size: 36rpx;
+    color: #ff7930;
+}
+.details_span{
+    margin: 0 25rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.span_left{
+    float: left;
+    font-size: 32rpx;
+    color: #737a7b;
+}
+.span_left text{
+    margin-right: 30rpx;
+}
+.span_price{
+    float: right;
+    font-size: 32rpx;
+    color: #737a7b;
+}
+/*明细弹层 end*/
+
+/*房间弹层*/
+.room_bg{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 200;
+}
+.room_con{
+    height: 500rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    position: fixed;
+    top: 50%;
+    margin-top: -250rpx;
+    left: 60rpx;
+    right: 60rpx;
+    z-index: 201;
+}
+.room_head{
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    background: #019ff0;
+    border-radius: 10rpx 10rpx 0 0;
+    position: relative;
+}
+.close_btn{
+    display: block;
+    width: 88rpx;
+    height: 88rpx;
+    background: url(https://webapi.jsjinfo.cn/smallApp/hotel/close.png) no-repeat center center;
+    background-size: 17rpx 17rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.room_ul{
+    width: 100%;
+    height: 412rpx;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.room_li{
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #666;
+    border-bottom: 2rpx solid #dedede;
+}
+.room_li:last-child{
+    border-bottom: 0;
+}
+.room_active{
+    background: url(https://webapi.jsjinfo.cn/smallApp/hotel/icon_xz.png) no-repeat 96%;
+    background-size: 27rpx 22rpx;
+}
+/*房间弹层 end*/
+
+/*优惠券*/
+.follow_img{
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 10rpx;
+}
+.num_text{
+    color: #019ff0;
+}
+
+/*优惠券 end*/
+
+/*优惠券弹层*/
+.follow_con{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 201;
+}
+.follow_title{
+    font-size: 36rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+}
+.follow_p{ 
+    font-size: 24rpx; 
+    color: #fff;
+    line-height: 1.5;
+    margin: 0 30px 30rpx;
+}
+/*优惠券弹层 end*/
+
+/*担保信息*/
+.GuranteeInfo_text{
+    color:#999;
+    font-size: 27rpx;
+    margin:10rpx 35rpx 10rpx 35rpx;
+}
+/*.GuranteeInfo_text text{
+    margin-left:35rpx;
+}*/
+
+/*担保信息 end*/
+
+
+

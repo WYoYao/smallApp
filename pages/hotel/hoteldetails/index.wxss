@@ -1,0 +1,289 @@
+page{
+    font-family: "microsoft yahei",arial;
+    background: #f5f5f5;
+}
+.clear{
+    clear: both;
+}
+/*banner*/
+.banner{
+    width: 100%;
+    position: relative;
+}
+.banner_img{
+    width: 100%;
+}
+.banner_con{
+    width: 100%;
+    background: url(https://webapi.jsjinfo.cn/smallApp/hotel/line.png) repeat-x;
+    position: absolute;
+    left: 0;
+    bottom: 10rpx;
+    right: 0;
+    z-index: 100;
+}
+.banner_p{
+
+}
+.banner_p_left{
+    font-size: 32rpx;
+    color: #fff;
+    font-weight: 700;
+    font-family: "microsoft yahei",arial;
+    line-height: 60rpx;
+    float: left;
+    margin-left: 25rpx;
+}
+.banner_p_right{
+    font-size: 24rpx;
+    color: #fff;
+    font-family: "microsoft yahei",arial;
+    line-height: 60rpx;
+    float: right;
+    margin-right: 15rpx;
+}
+/*banner end*/
+.main{
+    margin-top: -5rpx;
+}
+/*main*/
+.details{
+    width: 100%;
+    background: #fff;
+}
+.details_con{
+    padding: 25rpx 24rpx 35rpx  45rpx;
+    border-bottom: 2rpx solid #dedede;
+}
+.details_con:last-child{
+    border-bottom: 0;
+}
+.details_address{
+    font-size: 28rpx;
+    color: #484e4f;
+    padding-bottom: 10rpx;
+}
+.details_range{
+    font-size: 26rpx;
+    color: #737a7b;
+}
+.details_tel{
+    color: #019ff0;
+    margin-left: 35rpx;
+}
+.details_cion{
+    height: 29rpx;
+}
+.icon_img{
+    width: 29rpx;
+    height: 29rpx;
+    float: left;
+    margin-right: 20rpx;
+}
+
+/*房间*/
+.room{
+    margin-top: 20rpx;
+    background: #fff;
+}
+.room_date{
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-bottom: 2rpx solid #dedede;
+    /*background: url(https://webapi.jsjinfo.cn/smallApp/hotel/icon_jt.png) no-repeat 97% center;*/
+    background-size: 13rpx 26rpx;
+}
+.date_left{
+    float: left;
+    font-size: 28rpx;
+    color: #484e4f;
+    margin-left: 25rpx;
+}
+.date_right{
+    float: right;
+    font-size: 24rpx;
+    color: #26b7e6;
+    padding-right: 58rpx;
+}
+
+.room_con{
+    background: #f5f5f5;
+}
+.room_current{
+    width: 100%;
+    height: 166rpx;
+    border-bottom: 2rpx solid #dedede;
+    position: relative;
+}
+.room_hide{
+    background: #fff url(https://webapi.jsjinfo.cn/smallApp/hotel/icon_hide.png) no-repeat 97% center;
+    background-size: 23rpx 13rpx;
+}
+.room_show{
+    background: #fff url(https://webapi.jsjinfo.cn/smallApp/hotel/icon_show.png) no-repeat 97% center;
+    background-size: 23rpx 13rpx;
+}
+.room_dt{
+    width: 130rpx;
+    height: 130rpx;
+    position: absolute;
+    top: 18rpx;
+    left: 20rpx;
+    bottom: 18rpx;
+}
+.room_img{
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 10rpx;
+}
+.room_dd{
+    margin: 0 28rpx 0 170rpx;
+    padding: 18rpx 0;
+    overflow: hidden;
+}
+.room_dd_left{
+    float: left;
+}
+.room_fx{
+    font-size: 35rpx;
+    color: #484e4f;
+    margin-right: 10rpx;
+}
+.room_bh{
+    font-size: 28rpx;
+    color: #737a7b;
+}
+.left_size{
+    font-size: 26rpx;
+    color: #737a7b;
+}
+.left_size text{
+    margin-right: 20rpx;
+}
+.room_dd_right{
+    float: right;
+    height: 120rpx;
+    line-height: 120rpx;
+    margin-right: 33rpx;
+}
+.room_em{
+    font-size: 30rpx;
+    color: #ff7930;
+    font-weight: 700;
+}
+.room_price{
+    font-size: 40rpx;
+    color: #ff7930;
+    font-weight: 700;
+}
+.room_span{
+    font-size: 26rpx;
+    color: #aaaaaa;
+}
+
+.content_list{
+    overflow: hidden;
+    padding: 20rpx 0;
+    border-bottom: 2rpx solid #dedede;
+}
+.content_left{
+    width: 86%;
+    float: left;
+}
+.content_p{
+    float: left;
+    font-size: 35rpx;
+    color: #484e4f;
+    margin-left: 20rpx;
+}
+.content_span{
+    float: right;
+    text-align: right;
+    margin-right: 15rpx;
+}
+.content_price{
+    color: #ff7930;
+    font-family: "microsoft yahei",arial;
+}
+.content_em{
+    font-size: 24rpx;
+}
+.content_jg{
+    font-size: 34rpx;
+}
+.content_yh{
+    font-size: 24rpx;
+    color: #666;
+}
+.content_right{
+    width: 14%;
+    float: right;
+}
+.content_btn{
+    width: 67rpx;
+    height: 62rpx;
+    line-height: 62rpx;
+    text-align: center;
+    background: #ff7640;
+    border-radius: 8rpx;
+    font-size: 35rpx;
+    color: #fff;
+    font-family: "microsoft yahei",arial;
+}
+.content_btns{
+    width: 67rpx;
+    height: 62rpx;
+    border-radius: 8rpx;
+    border: 2rpx solid #ff7640;
+}
+.btns_y{
+    display: block;
+    width: 67rpx;
+    height: 31rpx;
+    line-height: 31rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #fff;
+    background: #ff7640;
+    border-radius: 4rpx 4rpx 0 0;
+}
+.content_back{
+    background: #999;
+}
+.btns_f{
+    display: block;
+    width: 67rpx;
+    height: 31rpx;
+    line-height: 31rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #ff7640;
+    background: #fff;
+    border-radius: 0 0 8rpx 8rpx;
+}
+.content_db{
+    width: 67rpx;
+    height: 62rpx;
+    text-align: center;
+    background: #fff;
+    border: 2rpx solid #ff7640;
+    border-radius: 8rpx;
+}
+.content_dbbtn{
+    width: 67rpx;
+    min-height: 35rpx;
+    height: 35rpx;
+    line-height: 35rpx;
+    text-align: center;
+    background: #ff7640;
+    border-radius: 7rpx 7rpx 0 0;
+    font-size: 30rpx;
+    color: #fff;
+    font-family: "microsoft yahei",arial;
+}
+.content_dbtet{
+    font-size: 20rpx;
+    color: #ff7930;
+}
+/*main end*/

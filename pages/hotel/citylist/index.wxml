@@ -1,0 +1,77 @@
+<view class="seach" hidden="{{!hiddenSearch}}">
+    <view class="seach_con">
+        <!--<input type="text" placeholder="输入城市名或区域" />-->
+        <view class="searchButton" bindtap="bindFocus"><text>输入城市名或区域</text></view>
+    </view>
+</view>
+<view class="slider_content">
+    <!--城市列表 start-->
+    <view class="slider_ul">
+    <scroll-view class="main clear" scroll-into-view="{{pageIndex}}" style="height: 1160rpx;" scroll-y="true">
+        <block wx:for="{{cityList}}" wx:key="unique" wx:for-index="index">
+            <!--热门城市 start-->
+            <view id="常用城市" wx:if="{{index==0}}" class="slider_li">
+                <text class="jianpin">热门城市</text>
+                <view class="slider_li_ul">
+                    <view class="city_li city_height" bindtap="bindSelected">
+                        <text wx:for="{{item.ListMobileCity}}" wx:key="unique" wx:for-item="info" data-CityID="{{info.CityID}}" class="city_list">{{info.CityName}}</text>
+                    </view>
+                </view>
+            </view>
+            <!--热门城市 end-->
+
+            <!--城市列表 start-->
+            <view id="{{item.GroupName}}" wx:if="{{index!=0}}" class="slider_li clear">
+                <text class="jianpin">{{item.GroupName}}</text>
+                <view class="slider_li_ul">
+                    <view wx:for="{{item.ListMobileCity}}" wx:key="unique" wx:for-item="info" data-CityID="{{info.CityID}}" wx:if="{{info.CityID==CityId}}" class="city_li select" bindtap="bindSelected">
+                        <text class="city">{{info.CityName}}</text>
+                    </view>
+                    <view wx:for="{{item.ListMobileCity}}" wx:key="unique" wx:for-item="info" data-CityID="{{info.CityID}}" wx:if="{{info.CityID!=CityId}}" class="city_li" bindtap="bindSelected">
+                        <text class="city">{{info.CityName}}</text>
+                    </view>
+                </view>
+            </view>
+        <!--城市列表 end-->
+        </block>
+        </scroll-view>
+    </view>
+    <!--城市列表 end-->
+
+    <!--定位常用 start-->
+    <view class="slider_nav">
+        <view class="nav_ul">
+            <view wx:for="{{cityList}}" wx:key="unique" wx:for-item="item" class="nav_ul_li" data-id="{{item.GroupName}}" bindtap="bindTouch">
+                <text>{{item.GroupName}}</text>
+            </view>
+        </view>
+    </view>
+    <!--定位常用 end-->
+</view>
+
+<!--搜索弹层 start-->
+<view class="seach_layer" wx:if="{{!hiddenSearch}}">
+    <view class="seach_layer_bg"></view>
+    <view class="seach_layer_con">
+        <!--搜索框 start-->
+        <view class="text_left">
+            <view class="text_left_p">
+                <input type="text" class="seach_text" focus="{{SearchFocus}}" bindinput="bindInput" />
+                <view class="seach_btn" bindtap="bindCancel">取消</view>
+            </view>
+        </view>
+        <!--搜索框 start-->
+
+        <!--搜索结果 start-->
+        <view class="seach_result">
+            <view class="result_ul">
+                <view wx:for="{{resultList}}" wx:key="unique" class="result_li" data-CityID="{{item.CityID}}" bindtap="bindSelected">
+                    <text>{{item.CityName}}</text>
+                </view>
+            </view>
+            <view hidden="{{nohasSearch}}" class="result_none">暂无结果！</view>
+        </view>
+        <!--搜索结果 start-->
+    </view>
+</view>
+<!--搜索弹层 end-->

@@ -1,0 +1,82 @@
+
+<!--nav start-->
+<view class="nav" wx:if="{{checkIndex < 0}}">
+  <view class="nav_con nav_active">
+    <text catchtap="switch" data-index="-1">账号密码登录</text>
+  </view>
+  <view class="nav_con">
+    <text catchtap="switch" data-index="1">手机动态密码登录</text>
+  </view>
+</view>
+<view class="nav" wx:if="{{checkIndex > 0}}">
+  <view class="nav_con">
+    <text catchtap="switch" data-index="-1">账号密码登录</text>
+  </view>
+  <view class="nav_con nav_active">
+    <text catchtap="switch" data-index="1">手机动态密码登录</text>
+  </view>
+</view>
+
+<!--nav end-->
+
+<!--登录 start-->
+<view class="login clear" wx:if="{{checkIndex < 0}}">
+  <view class="login_con">
+    <text class="login_left">账号</text>
+    <view class="login_right">
+      <input type="text" placeholder="请输入账号" class="login_text" bindinput="bindKeyloginName" />
+    </view>
+  </view>
+  <view class="login_con clear">
+    <text class="login_left">密码</text>
+    <view class="login_right">
+      <input type="text" placeholder="请输入密码" class="login_text" password="true" bindinput="bindKeypassWord" />
+    </view>
+  </view>
+</view>
+<view wx:if="{{checkIndex > 0}}">
+  <view class="login clear">
+    <view class="login_con">
+      <text class="login_left">手机号</text>
+      <view class="login_right">
+        <input type="tel" maxlength="11" placeholder="请输入手机号" class="login_text" bindinput="bindKeytel" value="{{tel}}" />
+      </view>
+    </view>
+    <view class="login_show">
+      <view class="login_main" style="display:none">
+        <text>验证码将发送至</text>
+      </view>
+      <view class="login_con clear">
+        <text class="login_left">验证码</text>
+        <view class="login_right">
+          <input type="text" placeholder="请输入验证码" class="login_text" bindinput="bindKeyCode" />
+          <input type="button" catchtap="getCode" value="{{codeMessage}}" class="login_btn" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--登录 end-->
+
+<!--按钮 start-->
+<view class="hotel_input clear">
+  <view type="button" bindtap="login" class="cencel_btn">登录</view>
+</view>
+
+<!--按钮 end-->
+
+<!--footer start-->
+<view class="footer clear">
+  <view class="footer_con">
+    <text catchtap="goRegistered">快速注册</text>
+  </view>
+  <view class="footer_con" hidden="true">
+    <text>找回密码</text>
+  </view>
+</view>
+
+<!--footer end-->
+<modal hidden="{{confirm_status}}" title="错误" confirm-text="确定" cancel-text="取消" bindconfirm="confirmClick" bindcancel="cancelClick">
+  {{confirm_Message}}
+</modal>

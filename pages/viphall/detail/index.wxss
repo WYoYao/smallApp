@@ -1,0 +1,202 @@
+.clear{
+    clear: both;
+}
+/*banner*/
+.banner{
+    width: 100%;
+    position: relative;
+}
+.banner_img{
+    width: 100%;
+    height: 150px;
+}
+
+.banner_price{
+     width: 180rpx;
+     position: absolute;
+     bottom: 30rpx;
+     left: 0;
+     z-index: 100;
+}
+.banner_title{
+    display: block; 
+    height: 40rpx; 
+    line-height: 40rpx; 
+    text-align: center; 
+    font-size: 22rpx; 
+    color: #FFFFFF; 
+    background: #FF8522;
+}
+.banner_price_con{ 
+    display: block; 
+    height: 68rpx; 
+    line-height: 68rpx; 
+    text-align: center; 
+    position: relative;
+}
+.banner_price_con:before{ 
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: #000000; 
+    opacity: .8; 
+    z-index: 108;
+}
+.banner_price_text{ 
+    display: block; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 110; 
+    width: 100%; 
+    height: 100%; 
+    font-size: 30rpx; 
+    color: #FFFFFF;
+}
+.price_text{ 
+    font-size: 24rpx;
+}
+/*banner end*/
+
+/*content*/
+.content{
+    width: 100%;
+    margin-bottom: 108rpx;
+}
+/*位置*/
+.position{ 
+    border-bottom: 2rpx solid #DEDEDE; 
+    padding: 20rpx 20rpx 20rpx 40rpx; 
+    overflow: hidden;
+}
+.position_p{ 
+    padding-bottom: 30rpx; 
+    overflow: hidden;
+}
+.position_p:last-child{ 
+    padding-bottom: 0;
+}
+.position_p .position_left,.position_p .position_right,.position_p_span{ 
+    font-size: 26rpx; 
+    color: #666666; 
+    line-height: 34rpx;
+}
+.position_p .position_left{ 
+    float: left;
+}
+.position_p .position_right{ 
+    float: right;
+}
+.position_p .icon_time{ 
+    display: block; 
+    width: 34rpx; 
+    height: 34rpx; 
+    float: left;
+    margin-right: 10rpx;
+}
+.position_p text{
+    float: left;
+}
+.p_span_width{
+    display: block;
+    float: left;
+    width: 90%;
+}
+/*位置 end*/
+
+/*介绍*/
+.introduce{ 
+    width: 95%; 
+    margin: auto; 
+    border-bottom: 2rpx solid #DEDEDE; 
+    padding: 20rpx 0;
+}
+.introduce text{ 
+    font-size: 26rpx; 
+    color: #666666; 
+    line-height: 1.3;
+}
+/*介绍 end*/
+
+/*应用*/
+.application{ 
+    width: 100%; 
+    border-bottom: 2rpx solid #DEDEDE; 
+    overflow: hidden;
+}
+.application_dl{ 
+    width: 25%; 
+    float: left; 
+    text-align: center; 
+    padding-bottom: 20rpx; 
+    overflow: hidden;
+}
+.application_dt{ 
+    padding: 20rpx 0;
+}
+.icon_use{
+    width: 60rpx;
+    height: 60rpx;
+}
+.application_dd{
+    font-size: 26rpx;
+    color: #333;
+}
+/*应用 end*/
+
+/*服务详情*/
+.service_details{ 
+    width: 95%; 
+    margin: auto;
+}
+.service_title{ 
+    height: 70rpx; 
+    line-height: 70rpx; 
+    font-size: 30rpx; 
+    color: #949494;
+}
+.service_title text{ 
+    border-left: 6rpx solid #949494; 
+    padding-left: 30rpx;
+}
+.service_con{ 
+    padding-bottom: 16rpx;
+}
+.service_img{
+    width: 99%;
+    height: 280rpx;
+    border-radius: 20rpx;
+  
+}
+.service_con text{
+    font-size: 24rpx; 
+    color: #666; 
+    padding: 16rpx 0 10rpx;
+}
+/*服务详情 end*/
+
+/*content end*/
+
+/*footer_btn*/
+.footer_btn{ 
+    width: 100%; 
+    height: 88rpx; 
+    line-height: 88rpx; 
+    text-align: center;
+    background: #ff8522; 
+    position: fixed; 
+    left: 0; 
+    bottom: 0; 
+    z-index: 200; 
+    font-size: 30rpx; 
+    color: #FFFFFF;
+}
+.footer_btn_tel{	
+		font-size:15px;
+		background-color: #ff8522;
+		color: #fff;
+}
+/*footer_btn end*/

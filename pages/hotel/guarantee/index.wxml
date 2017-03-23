@@ -1,0 +1,136 @@
+<!--酒店信息 start-->
+<view class="hotel">
+    <text class="hotel_name">{{HotelName}}</text>
+    <text class="hotel_f">{{RoomName}}</text>
+    <text class="hotel_time">入住：{{StartDate.Month}}月{{StartDate.Day}}日 - {{EndDate.Month}}月{{EndDate.Day}}日</text>
+    <text class="hotel_time">早餐：{{Breakfast}}</text>
+</view>
+<!--酒店信息 end-->
+
+<!--信用卡 start-->
+<view class="AddCard">
+    <view class="AddCard_title">
+        <view class="Credit">
+            <image src="https://webapi.jsjinfo.cn/smallApp/Credit.png" class="Credit_img"></image>
+        </view>
+        <text class="title_text">信用卡</text>
+    </view>
+    <view class="AddCard_con clear">
+        <view class="AddCard_section icon_jt" bindtap="show_bank">
+            <text class="section_text" hidden="{{state.CreditCard.CreditType}}">付款银行</text>
+            <text class="section_text"  hidden="{{!state.CreditCard.CreditType}}">{{state.CreditCard.CreditType}}</text>
+        </view>
+        <view class="AddCard_section">
+            <input type="number" maxlength="16" name="" placeholder="请输入信用卡卡号" data-type="CreditNumber" bindblur="BindEventBlurhandle" class="cardinput" />
+        </view>
+        <view class="AddCard_section">
+            <input type="text" name="" placeholder="请输入持卡人姓名" data-type="HolderName" bindblur="BindEventBlurhandle" class="cardinput" />
+        </view>
+        <view class="AddCard_section">
+            <input type="number" maxlength="3" name="" placeholder="请输入CVV2，卡背面最后三..." data-type="CVV" bindblur="BindEventBlurhandle"  class="cardinput" />
+        </view>
+        <view class="AddCard_section">
+            <view class="card_input">
+                <view class="card_view">
+                    <input type="number" maxlength="2" name="" placeholder="请输入卡年有效期" data-type="ExpirationYear" bindblur="BindEventBlurhandle" class="card_date" />
+                </view>
+                <view class="card_view">
+                    <input type="number" maxlength="2" name="" placeholder="请输入卡月有效期" data-type="ExpirationMonth" bindblur="BindEventBlurhandle" class="card_date" />
+                </view>
+            </view>
+        </view>
+        <view class="AddCard_section icon_jt" bindtap="show_cardtype">
+            <text class="section_text">身份证</text>
+        </view>
+        <view class="AddCard_section">
+            <input type="idcard" maxlength="18" name="" placeholder="请输入证件号" data-type="IdNo" bindblur="BindEventBlurhandle" class="cardinput" />
+        </view>
+        <view class="AddCard_section">
+            <input type="number" maxlength="11" name="" placeholder="请输入银行预留手机号" data-type="CreditCardMobile" bindblur="BindEventBlurhandle" class="cardinput" />
+        </view>
+    </view>
+</view>
+<!--信用卡 end-->
+
+<!--footer start-->
+<view class="footer">
+    <view class="footer_left">
+        <view class="footer_price">
+           <text class="price_a">总额</text>
+           <text class="price_b">{{view.PriceTypeName}}</text>
+           <text class="price_c">{{view.PriceTotal}}</text>
+        </view>
+        <view class="footer_show"  bindtap="eventShowRriceDetail">
+           <text>明细</text>
+        </view>
+    </view>
+    <view class="footer_right">
+        <text class="footer_btn" bindtap="bingCommitOrder">立即担保</text>
+    </view>
+</view>
+<!--footer end-->
+
+<!--明细弹层 start-->
+<view class="details_layer" hidden="{{view.show_price_detail}}">
+    <view class="layer_bg" bindtap="hideRriceDetail"></view>
+    <view class="layer_con">
+        <view class="layer_details">
+            <view class="details_left">
+                <text class="details_f">房费</text>
+            </view>
+            <view class="details_right">
+                <text class="details_p">{{view.PriceTypeName}} {{view.RoomTotalPrice}}</text>
+            </view>
+        </view>
+        <view wx:for="{{RoomPrice.ListRoomPrice}}" wx:key="unique" class="layer_details clear">
+            <view class="details_left">
+                <text class="details_t">{{item.SellDate}}</text>
+                <tetx class="details_t details_m">双早</tetx>
+            </view>
+            <view class="details_right">
+                <text class="details_s">{{view.PriceTypeName}}{{item.MemberPrice}} x {{state.RoomNum}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<!--明细弹层 end-->
+
+<!--银行卡列表 start-->
+<view class="card_layer" hidden="{{!show_bank}}">
+    <view class="card_bg"></view>
+    <view class="card_con">
+    <scroll-view class="main clear" style="height: 1160rpx;" scroll-y="true" bindscrolltolower="getMoreHotel">
+        <view wx:for="{{ListBankCreditCard}}" wx:key="BankID" data-BankID="{{item.BankID}}" bindtap="selectBank" class="card_list clear">
+            <view class="card_left">
+                <image src="{{item.BigLogoUrl}}" class="card_img"></image>
+            </view>
+            <view class="card_right">
+                <text class="card_name">{{item.BankName}}</text>
+                <text class="card_credit">信用卡</text>
+            </view>
+        </view>
+    </scroll-view>
+    </view>
+</view>
+<!--银行卡列表 end-->
+
+<!--选择证件 start-->
+<view class="Certificates_layer" hidden="{{!show_cardtype}}">
+    <view class="card_bg"></view>
+    <view class="card_con">
+        <view wx:if="{{state.CreditCard.IdType==0}}" bindtap="selectIdType" data-IdType="0" class="Certificates Cer_active">
+            <text>身份证</text>
+        </view>
+        <view wx:if="{{state.CreditCard.IdType!=0}}" bindtap="selectIdType" data-IdType="0" class="Certificates">
+            <text>身份证</text>
+        </view>
+
+        <view wx:if="{{state.CreditCard.IdType==1}}" bindtap="selectIdType" data-IdType="1" class="Certificates Cer_active">
+            <text>护照</text>
+        </view>
+        <view wx:if="{{state.CreditCard.IdType!=1}}" bindtap="selectIdType" data-IdType="1" class="Certificates">
+            <text>护照</text>
+        </view>
+    </view>
+</view>
+<!--选择证件 end-->

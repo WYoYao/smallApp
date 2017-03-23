@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index",
+    "pages/member/order/hotel/detail/index",
+    "pages/member/order/hotel/list/index",
+    "pages/hotel/guarantee/index",
+    "pages/hotel/fillorder/index",
+    "pages/hotel/index/index",
+    "pages/member/pay/index",
+    "pages/viphall/index/index",
+    "pages/hotel/citylist/index",
+    "pages/hotel/successful/index",
+    "pages/hotel/hoteldetails/index",
+    "pages/hotel/coupon/index",
+    "pages/hotel/keyword/index",
+    "pages/hotel/metroList/index",
+    "pages/hotel/spotList/index",
+    "pages/hotel/hotelList/index",
+    "pages/member/user/login/index",
+    "pages/viphall/detail/index",
+    "pages/member/user/registered/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#019FF0",
+    "navigationBarTitleText": "金色世纪",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#ffffff"
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

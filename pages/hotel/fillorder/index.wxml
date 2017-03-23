@@ -1,0 +1,303 @@
+<!--header start-->
+<view class="header">
+    <view class="room_name">
+        <text>{{HotelName}}</text>
+    </view>
+    <view class="room_fx">
+        <text>{{RoomName}}</text>
+    </view>
+    <view class="room_bh">
+        <text>入住：{{StartDate.Month}}月{{StartDate.Day}}日 - {{EndDate.Month}}月{{EndDate.Day}}日</text>
+        <text>共{{totalDays}}晚</text>
+    </view>
+    <view class="room_bh">
+        <text>早餐：{{Breakfast}}</text>
+    </view>
+</view>
+<!--header end-->
+
+<!--main start-->
+<view class="main clear">
+    <view class="section">
+        <view class="section_p">
+            <view class="section_left">
+                <text>房间数</text>
+            </view>
+            <view class="section_right">
+                <picker bindchange="bindRoomNumberPickerChange" value="{{state.RoomNum-1}}" range="{{roomEnum}}">
+                    <view class="section_right_con">
+                        <view class="icon"></view>
+                        <text>{{roomEnum[state.RoomNum-1]}}</text>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="section_p clear">
+            <view class="section_left">
+                <text>到店时间</text>
+            </view>
+            <view class="section_right">
+                <picker bindchange="bindArrivalTimePickerChange" value="{{ArrivalTimeIndex}}" range-key="key" range="{{ArrivalTimeEnum}}">
+                    <view class="section_right_con">
+                        <view class="icon"></view>
+                        <text>{{ArrivalTimeEnum[ArrivalTimeIndex].key}}</text>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="section_p clear">
+            <view class="section_left">
+                <text>入住人</text>
+            </view>
+            <view class="section_right">
+                <block wx:for="{{userList}}" wx:key="id">
+
+              
+                    <!--<view class="section_right_con">-->
+                           <!--<input type="text" name="" placeholder="一个房间填一个入住人" data-key="{{index}}" bindblur="bindInputGuestNames" class="telinput" />-->
+                    <view class="section_right_con">
+                         
+                        <input type="text" placeholder="一个房间填一个入住人" data-key="{{index}}" bindblur="bindInputGuestNames" class="telinput" />
+                    </view>
+                    <view class="section_right_con" hidden="true">
+                        <input type="text" name="" placeholder="请输入国籍" value="{{item.Nationalitys}}" data-key="{{index}}" bindblur="bindInputNationalitys" class="telinput" />
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="section_p clear">
+            <view class="section_left">
+                <text>联系电话</text>
+            </view>
+            <view class="section_right">
+                <view class="section_right_con">
+                    <input type="text" name="" placeholder="联系人手机号" bindinput="bindInputTel" value="{{state.Contact.ContactMobile}}" class="telinput" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--section end-->
+
+    <view class="section">
+        <view class="section_p">
+            <view class="section_left">
+                <text>发票</text>
+            </view>
+            <view class="section_right">
+                <view class="section_right_con">
+                    <text>如需发票，可向酒店索取</text>
+                </view>
+            </view>
+        </view>
+        <view class="section_p clear">
+            <view class="section_left">
+                <text>特别要求</text>
+            </view>
+            <view class="section_right">
+                <view class="section_right_con">
+                    <input type="text" name="" placeholder="您的要求酒店会尽量为您安排" value="{{state.RemarksToHotel}}" bindinput="bindInputRemark" class="telinput" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--section end-->
+    <view class="section" hidden="{{RoomPayType!=2}}">
+        <view class="section_p clear">
+            <view class="section_left">
+                <text>优惠券</text>
+            </view>
+            <view class="section_right">
+                <view class="section_right_con" bindtap="GoCoupon">
+                    <image src="https://webapi.jsjinfo.cn/smallApp/hotel/icon_follow.png" class="follow_img"></image>
+                    <view class="icon"></view>
+                    <text>可使用</text>
+                    <text class="num_text">{{view.CouponCount}}</text>
+                    <text>张优惠券</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="section" hidden="{{!view.isGurantee}}">
+        <view class="GuranteeInfo_text">
+            <text class="text_tip">担保规则：</text>
+            <text>由于房源紧张，订单提交后需冻结</text><text class="text_tel">￥{{view.GuranteeInfoPrice}}</text><text>的担保金额，如未按预定入住日期入住，酒店将扣除您的担保金，请按订单入住日期入住。如订单长时间未确认，请致电</text>
+            <text class="text_tel">400-810-1688</text><text>。</text>
+        </view>
+        <view class="GuranteeInfo_text">
+            <text class="text_tip">取消规则：</text>
+            <text>订单一但担保不可更改或取消，如需取消修改，请于指定入住日期前48小时致电我司，我司与酒店尝试协商修改或取消。客服电话：</text>
+            <text class="text_tel">400-810-1688</text><text>。</text>
+        </view>
+    </view>
+    <!--section end-->
+    <view class="section">
+        <view class="section_text">
+            <text class="text_tip">特别提示：</text>
+            <text>北京酒店全城禁烟</text>
+        </view>
+    </view>
+    <!--section end-->
+
+</view>
+<!--main end-->
+
+<!--footer start-->
+<view class="footer">
+    <view class="footer_left">
+        <view class="footer_text">
+            <text class="text_priceZ">总额</text>
+            <view class="text_price">
+                <text class="text_priceQ">{{view.PriceTypeName}}</text>
+                <text>{{view.PriceTotal}}</text>
+            </view>
+        </view>
+
+        <view class="footer_details footer_show" class="{{view.show_price_detail?'footer_details footer_show':'footer_details footer_hide'}}" bindtap="eventShowRriceDetail">
+            <text>明细</text>
+        </view>
+    </view>
+    <view class="footer_right">
+        <view bindtap="bingCommitOrder" class="footer_btn" hidden="{{view.isGurantee}}">提交订单</view>
+        <view bindtap="showGurantee" class="footer_btn" hidden="{{!view.isGurantee}}">去担保</view>
+    </view>
+</view>
+<!--footer end-->
+
+<!--明细弹层 start-->
+<view class="details_layer" hidden="{{view.show_price_detail}}">
+<view class="details_bg" bindtap="hideRriceDetail"></view>
+<view class="details_con">
+    <view class="details_p">
+        <text class="details_left">房费</text>
+        <text class="details_price">{{view.PriceTypeName}} {{view.RoomTotalPrice}}</text>
+    </view>
+    <view wx:for="{{RoomPrice.ListRoomPrice}}" wx:key="unique" class="details_span clear">
+        <text class="span_left">
+            <text>{{item.SellDate}}</text>
+            <text>无早</text>
+        </text>
+        <text class="span_price">{{view.PriceTypeName}}{{item.MemberPrice}} x {{state.RoomNum}}</text>
+    </view>
+    <view class="details_span clear" hidden="{{!state.HotelOrderCouponsUsedList.length}}">
+        <text class="span_left">
+            <text>优惠券</text>
+            <text></text>
+        </text>
+        <text class="span_price">-{{view.PriceTypeName}}{{view.couponsPrice}}</text>
+    </view>
+</view>
+</view>
+<!--明细弹层 end-->
+
+<!--房间弹层 start-->
+<view class="room_layer" style="display: none;">
+<view> class="room_bg"></view>
+<view class="room_con">
+    <view class="room_head">
+        <view class="close_btn"></view>
+        <text>请选择房间数</text>
+    </view>
+    <view class="room_ul">
+        <view class="room_li room_active">
+            <text>1间</text>
+        </view>
+        <view class="room_li">
+            <text>2间</text>
+        </view>
+        <view class="room_li">
+            <text>3间</text>
+        </view>
+        <view class="room_li">
+            <text>4间</text>
+        </view>
+        <view class="room_li">
+            <text>5间</text>
+        </view>
+        <view class="room_li">
+            <text>6间</text>
+        </view>
+        <view class="room_li">
+            <text>7间</text>
+        </view>
+        <view class="room_li">
+            <text>8间</text>
+        </view>
+        <view class="room_li">
+            <text>9间</text>
+        </view>
+    </view>
+
+</view>
+</view>
+<!--房间弹层 end-->
+
+<!--到店时间弹层 start-->
+<view class="time_layer" style="display: none;">
+<view class="room_bg"></view>
+<view class="room_con">
+    <view class="room_head">
+        <view class="close_btn"></view>
+        <text>最晚到店时间</text>
+    </view>
+    <view class="room_ul">
+        <view class="room_li room_active">
+            <text>17:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>18:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>19:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>20:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>21:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>22:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>23:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>23:59 前</text>
+        </view>
+        <view class="room_li">
+            <text>次日 01:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>次日 02:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>次日 03:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>次日 04:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>次日 05:00 前</text>
+        </view>
+        <view class="room_li">
+            <text>次日 06:00 前</text>
+        </view>
+    </view>
+</view>
+</view>
+<!--到店时间弹层 end-->
+
+<!--优惠券弹层 start-->
+<view class="follow_layer" hidden="true">
+    <view class="room_bg"></view>
+    <view class="follow_con">
+        <view class="follow_title">
+            <text>优惠券说明</text>
+        </view>
+        <view class="follow_p">
+            <text>最晚到店时间</text>
+        </view>
+    </view>
+</view>
+<!--优惠券弹层 end-->

@@ -1,0 +1,197 @@
+text{
+  font-family: "microsoft yahei",arial
+}
+
+
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.content{
+  padding: 0 20rpx;
+}
+
+/** 目的地样式 */
+.address{
+  height: 104rpx;
+  border-bottom: 2rpx solid #e1e1e1;
+}
+
+.addresss_key{
+  float: left;
+  line-height: 104rpx;
+  font-size: 26rpx;
+  color: #666;
+  width: 126rpx;
+}
+
+.addresss_value{
+  width: 80%;
+  float: left;
+  line-height: 104rpx;
+  font-size: 40rpx;
+  color: #666;
+  position: relative;
+}
+.addresss_value text{
+  font-size: 36rpx;
+  color: #333;
+}
+
+.clear{
+  clear: both;
+}
+.close1{
+  width: 33rpx;
+  height: 33rpx;
+  position: absolute;
+  top: 50%; 
+  right: 10%;
+  margin-top: -16rpx;
+}
+/**日期样式*/
+.date{
+  height: 162rpx;
+  border-bottom: 2rpx solid #e1e1e1;
+}
+
+.date_message{
+  float: left;
+  padding: 20rpx 0;
+  line-height: 60rpx;
+}
+
+
+.date_total{
+  width: 30%;
+  text-align: center;
+  float: left;
+  color: #b6b6b6;
+  font-size:26rpx;
+  line-height: 128rpx;
+}
+
+.date_text{
+  height:60rpx;
+  font-size: 26rpx;
+  color: #666;
+  line-height: 94rpx;
+  display:block;
+}
+
+.date_value{
+  height:60rpx;
+  color: #333;
+  font-size: 40rpx;
+  line-height: 54rpx;
+  display:inline-block;
+  float: left;
+}
+
+.date_now{
+  height:60rpx;
+  font-size: 26rpx;
+  color: #666;
+  line-height: 60rpx;
+  display:inline-block;
+  float: left;
+  margin-left:20rpx;
+}
+
+.keyword{
+  height:104rpx;
+  border-bottom: 2rpx solid #e1e1e1;
+  position: relative;
+}
+
+.star{
+  height:104rpx;
+  border-bottom: 2rpx solid #e1e1e1;
+}
+
+.font_small{
+  line-height: 104rpx;
+  font-size: 26rpx;
+  color: #666;
+  width: 126rpx;
+}
+
+.button{
+  margin-top:80rpx;
+}
+
+#search{
+  background-color:"#ff8522";
+}
+.h128{
+  height: 128rpx;
+}
+.date_left{
+  width: 35%;
+  float: left;
+}
+.bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  border-top: 1px solid #DEDEDE;
+  background: #FFFFFF;
+  padding: 3px 0;
+  color: #9c9c9c;
+  font-size: 12px;
+}
+.index_page{
+  width: 32%;
+  margin-right: 1%;
+  height: 100rpx;
+  float: left;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.index_hotel{
+  width: 32%;
+  margin: 0 1%;
+  height: 100rpx;
+  float: left;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.index_viphall{
+  width: 32%;
+  margin-left: 1%;
+  height: 100rpx;
+  float: left;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.icon{
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+}

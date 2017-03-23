@@ -1,0 +1,45 @@
+<!--seach start-->
+<view class="seach" style="display:none;">
+    <view class="seach_input">
+      	<view class="search_text">
+            <input type="text" name="" placeholder="搜索贵宾厅" value="" class="input_val"/>
+       </view>
+    </view>
+</view>
+<!--seach end-->
+
+<!--main start-->
+<view class="list clear">
+	<!-- vipList start-->
+	<view wx:for="{{GroupedVIPHallListRes.GroupedVIPHallList}}" wx:key="VipHallName"  class="vip_list_group">
+			<view class="vip_name">
+	    	<text>{{item.AirportName}}</text>
+	    </view>
+	    <view class="vip_list" wx:for="{{item.VIPHallList}}" wx:for-item="VIPHallListInfo" wx:key="{{VIPHallListInfo.VIPHallID}}" data-item="{{VIPHallListInfo.EncrptParam}}" catchtap="handleToDetail" >
+	        <view>
+	            <image class="vip_img" src="{{VIPHallListInfo.ImageUrl}}"></image>
+	        </view>
+	        <!--VipList子贵宾厅  start-->
+          <view class="vip_info" >
+               <view class="vip_text">{{VIPHallListInfo.VIPHallName}}</view>
+              <view>
+              	<text class="vip_text">{{VIPHallListInfo.CheckLocation}}</text>
+              	<text class="vip_text1">营业时间:{{VIPHallListInfo.BusinessHour}}</text>
+              </view>
+              <view class="vip_info_padding">
+             			<block wx:for="{{VIPHallListInfo.VIPHallImgList}}"  wx:for-item="VIPHallListInfoImg"  wx:for-index="idx" wx:key="">
+	                   <block wx:if="{{idx < 5 }}">
+	                   		<image class="vip_img_ico" src="{{VIPHallListInfoImg}}" class="icoimg"></image>
+	                   </block>
+	                
+        					</block>
+              </view>
+			  <view class="vip_text_price"><text class="vip_text_price">￥{{VIPHallListInfo.BasePrice}}/人</text></view>
+          </view>
+          
+    			<!--VipList子贵宾厅 end-->
+      </view>
+	</view>
+	<!-- viplist end-->
+</view>   
+ 

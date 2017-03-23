@@ -1,0 +1,23 @@
+<!--main start-->
+<view class="metro_list">
+    <view class="metro_left">
+        <view class="metro_ul">
+            <block wx:for="{{ListSubway}}" wx:key="index">
+                 <view wx:if="{{index==indexCur}}" class="metro_li metro_active" data-index="{{index}}" bindtap="selectUl">
+                    <text>{{item.SubwayName}}</text>
+                </view>
+                <view wx:if="{{index!=indexCur}}" class="metro_li" data-index="{{index}}" bindtap="selectUl">
+                    <text>{{item.SubwayName}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="metro_right">
+        <view class="right_ul" wx:for="{{ListSubway}}" wx:key="index" hidden="{{index!=indexCur}}">
+            <view class="right_li" wx:for="{{item.ListSubwayStationItem}}" wx:key="unique" wx:for-item="info" data-json="{{info.data}}" bindtap="bindClick">
+                <text>{{info.name}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<!--main end-->

@@ -1,0 +1,64 @@
+<!--nav start-->
+<view class="nav">
+    <view class="nav_con nav_active">
+        <text>账号密码登录</text>
+    </view>
+    <view class="nav_con">
+        <text>手机动态密码登录</text>
+    </view>
+</view>
+<!--nav end-->
+
+<!--登录 start-->
+<view class="login clear">
+    <view class="login_con">
+        <text class="login_left">账号</text>
+        <view class="login_right">
+            <input type="text" name="" placeholder="请输入账号" value="" class="login_text" />
+        </view>
+    </view>
+    <view class="login_con clear">
+        <text class="login_left">密码</text>
+        <view class="login_right">
+            <input type="password" name="" placeholder="请输入密码" value="" class="login_text" />
+        </view>
+    </view>
+</view>
+<view class="login clear" style="display: none;">
+    <view class="login_con">
+        <text class="login_left">手机号</text>
+        <view class="login_right">
+            <input type="tel" maxlength="11" name="" placeholder="请输入手机号" value="" class="login_text" />
+        </view>
+    </view>
+    <view class="login_show" style="display: none;">
+        <view class="login_main">
+            <text>验证码将发送至12345678910</text>
+        </view>
+        <view class="login_con clear">
+            <text class="login_left">验证码</text>
+            <view class="login_right">
+                <input type="text" name="" placeholder="请输入验证码" value="" class="login_text" />
+                <input type="button" name="" disabled="disabled" value="获取验证码" class="login_btn" />
+            </view>
+        </view>
+    </view>
+</view>
+<!--登录 end-->
+
+<!--按钮 start-->
+<view class="hotel_input clear">
+    <input type="button" disabled="disabled" name="" value="登录" class="cencel_btn" />
+</view>
+<!--按钮 end-->
+
+<!--footer start-->
+<view class="footer clear">
+    <view class="footer_con">
+        <text>快速注册</text>
+    </view>
+    <view class="footer_con">
+        <text>找回密码</text>
+    </view>
+</view>
+<!--footer end-->

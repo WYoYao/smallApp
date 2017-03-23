@@ -1,0 +1,33 @@
+.clear{ clear: both;}
+/*搜索框*/
+.seach{width: 100%;height: 60rpx;background: #f5f5f5;padding: 14rpx 0; border-bottom: 2rpx solid #dedede;position: fixed;left: 0;top: 0;right: 0;z-index: 100;}
+.seach_input{ margin: 0 20rpx;background: #fff;height: 60rpx; border-radius: 10rpx;position: relative;}
+.search_text{float: left;margin-left: 10rpx;background: url(https://webapi.jsjinfo.cn/smallApp/viphall/search_copy.png) no-repeat left;background-size: 28rpx 27rpx;}
+.input_val{width: 100%; height: 50rpx; line-height: 50rpx;margin-left: 38rpx;font-size: 24rpx;color: #333;}
+
+
+.order_title{ width: 100%; background: #0FA4F0; overflow: hidden;}
+.order_title_bg{ width: 90%; height: 30px; margin: 14rpx auto 14rpx; border-radius: 10rpx; border: 2rpx solid #FFFFFF;}
+.order_title .order_title_item{ width: 50%; height: 60rpx; line-height: 60rpx; text-align: center; float: left; font-size: 32rpx; color: #FFFFFF;}
+.order_title .order_title_active{ background: #FFFFFF; color: #009FF0;}
+
+
+.order_main{ width: 100%;}
+.order_con{ width: 95%; margin: auto; }
+.order_con_section{ width: 100%; border: 2rpx solid #dedede; border-radius: 10rpx; margin-top: 20rpx; padding-bottom: 20rpx; overflow: hidden;background-color:#fff;}
+.section_con{ width: 95%; margin: auto;}
+.section_cons{ width: 95%; margin: auto; border-top: 2rpx solid #dedede;}
+.section_con .order_number{ line-height: 1; font-size: 24rpx; padding-top: 20rpx;}
+.section_con .order_number_left{ float: left; color: #929292;}
+.section_con .order_number_right{ float: right; color: #929292;}
+.section_con .right_font{ font-size: 28rpx;}
+.section_con .right_fonts{ font-size: 24rpx;}
+.section_con .right_fonts text{ margin-left: 20rpx;}
+.order_number_con{ font-size: 32rpx; color: #333; line-height: 1;}
+.order_number_con span{ float: left; padding-right: 16rpx;}
+.order_number:last-child{ padding-bottom: 20rpx;}
+
+.OrderList_page{ margin-top: 200rpx; width: 100%; text-align: center;}
+.page_dt_img{ width: 142rpx; height: 142rpx;}
+.page_dd{ font-size: 30rpx; color: #333; line-height: 1.2; padding-top: 40rpx;}
+  

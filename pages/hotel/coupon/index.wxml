@@ -1,0 +1,174 @@
+<!--main start-->
+<view class="main">
+    <!--nav start-->
+    <view class="nav">
+        <view class="navList">
+            <view wx:if="{{view.togglePage==0}}" data-index="0" bindtap="toggleBlock" class="nav_li active">
+                <text>未使用</text>
+            </view>
+            <view wx:if="{{view.togglePage!=0}}" data-index="0" bindtap="toggleBlock" class="nav_li">
+                <text>未使用</text>
+            </view>
+            <view wx:if="{{view.togglePage==1}}" data-index="1" bindtap="toggleBlock" class="nav_li active">
+                <text>已使用</text>
+            </view>
+            <view wx:if="{{view.togglePage!=1}}" data-index="1" bindtap="toggleBlock" class="nav_li">
+                <text>已使用</text>
+            </view>
+        </view>
+    </view>
+    <!--nav end-->
+
+    <!--wrap start-->
+    <view class="wrap clear">
+        <!--未使用 start-->
+        <view class="coupon" hidden="{{view.togglePage==1}}">
+            <scroll-view class="main clear" style="height: 1150rpx;" scroll-y="true">
+                <block wx:for="{{couponList}}" wx:key="CouponID">
+                         <view class="coupon_con" data-id="{{index}}" bindtap="bindcheckCoupon">
+                            <image src="../images/coupon_bg1.png" class="coupon_img1"></image>
+                            <view class="coupon_wxz" hidden="{{item.selected}}" ></view>
+                            <view class="coupon_wxz coupon_xz" hidden="{{!item.selected}}" ></view>
+                            <view class="coupon_left">
+                                <image src="../images/coupon_bg2.png" class="coupon_img2"></image>
+                                <view class="coupon_left_con">
+                                    <text class="coupon_price">￥</text>
+                                    <text>{{item.CouponValue}}</text>
+                                </view>
+                            </view>
+                            <view class="coupon_right">
+                                <image src="../images/coupon_bg3.png" class="coupon_img3"></image>
+                                <view class="coupon_right_con">
+                                    <text class="coupon_title">{{item.CouponName}}</text>
+                                    <view class="coupon_ul">
+                                        <view class="coupon_li">
+                                            <text>• 使用范围：{{item.CouponRang}}</text>
+                                        </view>
+                                        <view class="coupon_li">
+                                            <text>• 有效期至：{{item.EndTime}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                </block>
+            </scroll-view>
+
+            <view  style="display:none">
+                <view class="coupon_con">
+                    <image src="../images/coupon_bg1.png" class="coupon_img1"></image>
+                    <view class="coupon_left">
+                        <image src="../images/coupon_bg2.png" class="coupon_img2"></image>
+                        <view class="coupon_left_con">
+                            <text class="coupon_price">￥</text>
+                            <text>100</text>
+                        </view>
+                    </view>
+                    <view class="coupon_right">
+                        <image src="../images/coupon_bg3.png" class="coupon_img3"></image>
+                        <view class="coupon_right_con">
+                            <text class="coupon_title">年费抵扣券</text>
+                            <view class="coupon_ul">
+                                <view class="coupon_li">
+                                    <text>• 使用范围：限年费抵扣使用</text>
+                                </view>
+                                <view class="coupon_li">
+                                    <text>• 有效期至：2016-05-12</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <!--funds_con end-->
+                
+                <view class="coupon_con clear">
+                    <image src="../images/coupon_bg1.png" class="coupon_img1"></image>
+                    <view class="coupon_left">
+                        <image src="../images/coupon_bg2.png" class="coupon_img2"></image>
+                        <view class="coupon_left_con">
+                            <text class="coupon_price">￥</text>
+                            <text>100</text>
+                        </view>
+                        <view class="coupon_span">
+                            <text>满￥200使用</text>
+                        </view>
+                    </view>
+                    <view class="coupon_right">
+                        <image src="../images/coupon_bg3.png" class="coupon_img3"></image>
+                        <view class="coupon_right_con">
+                            <text class="coupon_title">年费抵扣券</text>
+                            <view class="coupon_ul">
+                                <view class="coupon_li">
+                                    <text>• 使用范围：限年费抵扣使用</text>
+                                </view>
+                                <view class="coupon_li">
+                                    <text>• 有效期至：2016-05-12</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <!--funds_con end-->
+
+                <view class="coupon_con overdue clear">
+                    <image src="../images/coupon_bg4.png" class="coupon_img4"></image>
+                    <view class="coupon_left">
+                        <image src="../images/coupon_bg2.png" class="coupon_img2"></image>
+                        <view class="coupon_left_con">
+                            <text class="coupon_price">￥</text>
+                            <text>100</text>
+                        </view>
+                    </view>
+                    <view class="coupon_right">
+                        <image src="../images/coupon_bg3.png" class="coupon_img3"></image>
+                        <view class="coupon_right_con">
+                            <text class="coupon_title">年费抵扣券</text>
+                            <view class="coupon_ul">
+                                <view class="coupon_li">
+                                    <text>• 使用范围：限年费抵扣使用</text>
+                                </view>
+                                <view class="coupon_li">
+                                    <text>• 有效期至：2016-05-12</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            <!--funds_con end-->
+            </view>
+
+            <!--暂无优惠券-->
+            <view class="coupon_dl" hidden="{{couponList.length!=0}}">
+                <view class="coupon_dt">
+                    <image src="../images/voucher_no.png" class="voucher_no"></image>
+                </view>
+                <view class="coupon_dd">
+                    <text>您暂时还没有优惠券哦~!</text>
+                </view>
+            </view>
+
+        </view>
+        <!--未使用 end-->
+        
+        <!--已使用 start-->
+        <view class="coupon" hidden="{{view.togglePage==0}}">
+
+            <!--暂无优惠券-->
+            <view class="coupon_dl" hidden="{{couponUsed.length!=0}}">
+                <view class="coupon_dt">
+                    <image src="../images/voucher_no.png" class="voucher_no"></image>
+                </view>
+                <view class="coupon_dd">
+                    <text>您暂时还没有优惠券哦~!</text>
+                </view>
+            </view>
+
+        </view>
+        <!--已使用 end-->
+        
+    </view>
+    <!--wrap end-->
+
+
+</view>
+<!--main end-->

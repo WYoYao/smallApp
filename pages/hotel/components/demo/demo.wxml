@@ -1,0 +1,7 @@
+
+<template name="demo">
+<view>
+    <text>123123{{name}}</text>
+    <text>test</text>
+</view>
+</template>

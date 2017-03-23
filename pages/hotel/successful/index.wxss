@@ -1,0 +1,41 @@
+page{ background: #f5f5f5;}
+.clear{ clear: both;}
+/*状态*/
+.order_success{ width: 240rpx; height: 88rpx; text-align: center; line-height: 88rpx; margin: auto;}
+.success_img{ width: 64rpx; height: 64rpx; margin: 12rpx 10rpx 12rpx 0; float: left;}
+.order_success text{ font-size: 32rpx; color: #333; float: left;}
+.price{ background: #fff; border-bottom: 2rpx solid #dedede; padding-left: 20rpx; overflow: hidden;}
+.price_con{ width: 100%; height: 70rpx; border-top: 2rpx solid #dedede; float: left;}
+.price_con:first-child{border-top: 0;}
+.price_left{ width: 160rpx; line-height: 70rpx; font-size: 28rpx; color: #999; float: left;}
+.price_right{ line-height: 70rpx; font-size: 30rpx; color: #484e4f; float: left;}
+.right_span,.right_spans{ line-height: 70rpx; font-size: 30rpx; color:#ff8522; float: left;}
+.right_span{ background: url(https://webapi.jsjinfo.cn/smallApp/order/icon_show.png) no-repeat right; background-size: 19rpx 12rpx; padding-right: 29rpx;}
+.right_spans{ background: url(https://webapi.jsjinfo.cn/smallApp/order/icon_hide.png) no-repeat right; background-size: 19rpx 12rpx; padding-right: 29rpx;}
+.right_em{ font-size: 20rpx;}
+.show_first{ border-top: 2rpx solid #dedede !important;}
+.show_span{ line-height: 88rpx; font-size: 30rpx; color: #484e4f; float: left;}
+/*状态 end*/
+
+/*酒店*/
+.hotel{ background: #fff; margin-top: 20rpx; padding-left: 20rpx; border-top: 2rpx solid #dedede; border-bottom: 2rpx solid #dedede; overflow: hidden;}
+.hotel_con{ border-bottom: 2rpx solid #dedede; padding-right: 20rpx;}
+.hotel_con:last-child{ border-bottom: 0;}
+.hotel_name{ display: block; width: 100%; height: 70rpx; line-height: 70rpx; font-size: 30rpx; color: #333333; 
+background: url(https://webapi.jsjinfo.cn/smallApp/order/icon_jt.png) no-repeat right;
+ background-size: 13rpx 26rpx;}
+ .hotel_names{ display: block; width: 100%; height: 70rpx; line-height: 70rpx; font-size: 30rpx; color: #333333; 
+ background-size: 13rpx 26rpx;}
+.hotel_dz{ display: block; line-height: 1.5; font-size: 28rpx; color: #999999;
+ /*background: url(../../images/order/icon_dz.png) no-repeat right 20rpx; */
+ background-size: 37rpx 37rpx; padding: 20rpx 80rpx 20rpx 0;}
+.hotel_time{ line-height: 1.5; padding: 10rpx 0; font-size: 28rpx; color: #333;}
+.hotel_time text{ margin-right: 50rpx;}
+.hotel_list{ width: 100%; height: 70rpx; float: left;}
+.hotel_list .price_right text{ margin-right: 30rpx;}
+/*酒店 end*/
+
+/*按钮*/
+.hotel_input{ padding: 14rpx 20rpx;}
+.cencel_btn{ width: 100%; height: 70rpx; line-height: 70rpx; text-align: center; font-size: 30rpx; color: #019ff0; font-family: "microsoft yahei",arial; border: 2rpx solid #019ff0; border-radius: 10rpx;}
+/*按钮 end*/

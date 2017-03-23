@@ -1,0 +1,27 @@
+/*spot_list*/
+.spot_list{
+    width: 100%;
+    background: #fff;
+}
+.spot_li{
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 28rpx;
+    color: #333333;
+}
+.icon_spot{
+    width: 44rpx;
+    height: 44rpx;
+    background: url(https://webapi.jsjinfo.cn/smallApp/hotel/icon_spot.png) no-repeat;
+    background-size: 88rpx 44rpx;
+    float: left;
+    margin: 22rpx 30rpx;
+}
+.spot_wxz{
+    background-position: 0 0;
+}
+.spot_xz{
+    background-position: -44rpx 0;
+}
+/*spot_list end*/

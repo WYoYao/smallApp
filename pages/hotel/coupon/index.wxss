@@ -1,0 +1,46 @@
+page{ background: #f5f5f5;}
+.clear{ clear: both;}
+/*nav*/
+.nav{ width: 100%;}
+.navList{ overflow: hidden; background: #FFFFFF; border-bottom: 2rpx solid #DEDEDE; position: relative;}
+.nav_li{ width: 50%; height: 96rpx; line-height: 96rpx; text-align: center; font-size: 32rpx; color: #333; float: left;}
+.active{ width: 50%; height: 96rpx; border-bottom: 4rpx solid #019FF0;}
+/*nav*/
+
+/*coupon*/
+.wrap{ padding: 0 20rpx; position: fixed; top: 100rpx; right: 0; bottom: 0; left: 0; overflow: scroll; -webkit-overflow-scrolling: touch;}
+/*.coupon{ display: none;}*/
+.coupon_con{ height: 152rpx; background: #fff; border-radius: 10rpx; margin-top: 26rpx; box-shadow: 0 0 20rpx #e0e0e0; position: relative;}
+.coupon_img1{ position: absolute; top: 0; left: 0; width: 15rpx; height: 152rpx;}
+.coupon_left{ width: 40%; float: left; background-size: 8px 76px; text-align: center; padding-top: 36rpx; position: relative;}
+.coupon_img2{ position: absolute; top: 0; right: 0; width: 17rpx; height: 152rpx;}
+.coupon_left_con{ height: 60rpx; padding-right: 17rpx;}
+.coupon_left text{ font-size: 60rpx; color: #fa940f; font-weight: 700; font-family: "microsoft yahei",arial;}
+.coupon_left .coupon_price{ font-size: 28rpx;}
+.coupon_wxz{ width: 24rpx; height: 24rpx; border: 2rpx solid #dedede; background: #fff; border-radius: 50%; position: absolute; top: 50%; left: 40rpx; margin-top: -12rpx;}
+.coupon_xz{ border: 2rpx solid #019ff0; background: #019ff0; position: absolute; top: 50%; left: 40rpx; margin-top: -12rpx;}
+.coupon_xz::before{ content: ""; position: absolute; top: 50%; left: 50%; margin-left: -7rpx; margin-top: -3rpx; width: 14rpx; height: 6rpx; border-left: 4rpx solid #fff; border-bottom: 4rpx solid #fff; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -o-transform: rotate(-45deg); -ms-transform: rotate(-45deg);}
+
+
+.coupon_span{ text-align: center;}
+.coupon_span text{ font-size: 16rpx; color: #fa940f; border-radius: 40rpx; border: 2rpx solid #fa940f; padding: 2rpx 6rpx;}
+
+.coupon_right{ width: 60%; height: 152rpx; float: left; position: relative;}
+.coupon_img3{ position: absolute; top: 0; left: 0; width: 17rpx; height: 152rpx;}
+.coupon_right_con{ padding-left: 17rpx;}
+.coupon_title{ display: block; font-size: 30rpx; color: #666; font-weight: 700; padding: 30rpx 0 0 30rpx;}
+.coupon_ul{ padding-left: 30rpx;}
+.coupon_li{ font-size: 20rpx; color: #999; line-height: 1; padding-top: 12rpx;}
+/*coupon end*/
+
+/*已使用*/
+.coupon_img4{ position: absolute; top: 0; left: 0; width: 15rpx; height: 152rpx;}
+.overdue .coupon_left text{ color: #bababa;}
+.overdue .coupon_title{ color: #999999;}
+/*已使用*/
+
+/*没有优惠券*/
+.coupon_dl{ width: 100%; text-align: center; margin-top: 180rpx;}
+.voucher_no{ width: 142rpx; height: 77rpx;}
+.coupon_dd{ font-size: 30rpx; color: #c8c8c8; padding-top: 40rpx;}
+/*没有优惠券 end*/

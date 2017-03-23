@@ -1,0 +1,121 @@
+<!--seach start-->
+<view class="seach">
+    <view class="seach_input">
+        <view class="start_date">
+        <picker style="float:left" mode="date" value="{{state.StartDate}}" start="{{StartSelectStartDate}}" end="{{StartSelectEndDate}}" bindchange="bindStartDateChange">
+            <text>住 </text><text>{{StartDate.Month}}-{{StartDate.Day}}</text>
+                </picker>
+        </view>
+        <view class="end_date">
+            <picker style="float:left" mode="date" value="{{state.EndtDate}}" start="{{EndSelectStartDate}}" end="{{EndSelectEndDate}}" bindchange="bindEndDateChange">
+            <text>离 </text><text>{{EndtDate.Month}}-{{EndtDate.Day}}</text>
+            </picker>
+        </view>
+        <view class="seach_right">
+            <input type="text" name="" placeholder="酒店名/商圈/地标" bindfocus="toKeyWord" class="cityinput"/>
+        </view>
+    </view>
+</view>
+<!--seach end-->
+
+<!--main start-->
+<scroll-view class="main clear" style="height: 1160rpx;" scroll-y="true" bindscrolltolower="getMoreHotel">
+
+    <!--hotel_list start-->
+    <view wx:for="{{hotelListRes.ListHotel}}" wx:key="HotelId" class="hotel_list clear" catchtap="handleToDetail" data-item="{{item.string}}">
+        <!--hotel_dt-->
+        <view class="hotel_dt">
+            <image src="{{item.ListHotelCoverImg.length>0?item.ListHotelCoverImg[0].PicUrl:'https://webapi.jsjinfo.cn/smallApp/hotel/images.png'}}" class="hotel_img"></image>
+        </view>
+        <!--hotel_dd-->
+        <view class="hotel_dd">
+            <text class="hotel_title">{{item.HotelName}}</text>
+            <text class="hotel_home">{{item.HotelStarType}}</text>
+            <view class="hotel_icon">
+                <image wx:if="{{item.IsHaveWiFi}}" src=".https://webapi.jsjinfo.cn/smallApp/hotel/wifi.png" class="icon_wifi"></image>
+                <image wx:if="{{item.IsHavePark}}" src=".https://webapi.jsjinfo.cn/smallApp/hotel/icon_p.png" class="icon_p"></image>
+            </view>
+            <text class="hotel_range" wx:if="{{!item.Distance}}">{{item.HotelAddress}}</text>
+            <text class="hotel_range" wx:if="{{item.Distance}}">距离{{addressName}}{{item.Distance}}公里</text>
+            <view class="hotel_ticket">
+                <text wx:if="{{item.MaxCashback}}">返</text>
+                 <!--<text>新客券</text>-->
+            </view>
+            <view class="hotel_price">
+                <text wx:if="{{item.HotelStatu==0}}" class="price_texts">满</text>
+                <text wx:if="{{item.HotelStatu==1}}" class="price_text"><text class="price_em">￥</text>{{item.MemberPrice}}<text class="price_span">起</text></text>
+            </view>
+        </view>
+    </view>
+
+
+    <!--hotel_list start-->
+    <!--<view class="hotel_list clear">
+
+    //     <view class="hotel_dt">
+    //         <image src=".https://webapi.jsjinfo.cn/smallApp/hotel/images.png" class="hotel_img"></image>
+    //     </view>
+    //     <view class="hotel_dd">
+    //         <text class="hotel_title">北京永和星宾馆宾星馆宾馆标准房北京永和星宾馆宾星馆宾馆标准房</text>
+    //         <text class="hotel_home">高档型</text>
+    //         <view class="hotel_icon">
+    //             <image src=".https://webapi.jsjinfo.cn/smallApp/hotel/wifi.png" class="icon_wifi"></image>
+    //             <image src=".https://webapi.jsjinfo.cn/smallApp/hotel/icon_p.png" class="icon_p"></image>
+    //         </view>
+    //         <text class="hotel_range">距离您3公里，媒体村商圈</text>
+    //         <view class="hotel_ticket">
+    //             <text>返</text>
+    //             <text>新客券</text>
+    //         </view>
+    //         <view class="hotel_price">
+    //             <text class="price_text"><text class="price_em">￥</text>615</text><text class="price_span">起</text>
+    //         </view>
+    //     </view>
+    // </view>-->
+    <!--hotel_list end-->
+</scroll-view>
+<!--main end-->
+
+<!--footer start-->
+<view class="footer">
+    <view class="footer_dl" bindtap="showSort">
+        <view class="footer_dt">
+            <image src="https://webapi.jsjinfo.cn/smallApp/hotel/icon_px.png" class="footer_img"></image>
+        </view>
+        <view class="footer_dd">
+            <text>排序</text>
+        </view>
+    </view>
+</view>
+<!--footer end-->
+
+<!--排序 start-->
+<view class="sorting" hidden="{{SortState}}">
+    <view class="sorting_bg" bindtap="hideSort"></view>
+    <view class="sorting_con">
+        <view class="sorting_ul">
+            <view wx:if="{{SortActive==6}}" data-sort="6" bindtap="setSort" class="sorting_li sorting_active">
+                <text>推荐排序</text>
+            </view>
+            <view wx:elif="{{SortActive!=6}}" data-sort="6" bindtap="setSort" class="sorting_li">
+                <text>推荐排序</text>
+            </view>
+            <view wx:if="{{SortActive==1}}" data-sort="1" bindtap="setSort" class="sorting_li sorting_active">
+                <text>价格  低→高</text>
+            </view>
+            <view wx:elif="{{SortActive!=1}}" data-sort="1" bindtap="setSort" class="sorting_li">
+                <text>价格  低→高</text>
+            </view>
+            <view wx:if="{{SortActive==2}}" data-sort="2" bindtap="setSort" class="sorting_li sorting_active">
+                <text>价格  高→低</text>
+            </view>
+            <view wx:elif="{{SortActive!=2}}" data-sort="2" bindtap="setSort" class="sorting_li">
+                <text>价格  高→低</text>
+            </view>
+            <view class="sorting_li" wx:if="{{state.BaiDuLon}}">
+                <text>距离排序</text>
+            </view>
+        </view>
+    </view>
+</view>
+<!--排序 end-->

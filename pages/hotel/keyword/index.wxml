@@ -1,0 +1,189 @@
+<view>
+    <!--seach start-->
+    <view class="seach">
+        <view class="seach_input">
+            <view class="seach_right">
+                <input type="text" name="" placeholder="酒店名/商圈/地标" value="" bindfocus="bindSearchfocus" bindinput="bindhandleinput" class="cityinput" />
+            </view>
+        </view>
+    </view>
+    <!--seach end-->
+
+    <!--main start-->
+    <view class="main clear" hidden="{{show_search}}">
+        <!--历史 start-->
+        <view class="current" hidden="{{hiddenLog}}">
+            <!--title start-->
+            <view class="current_title">
+                <view class="title_left">
+                    <view class="title_icon history"></view>
+                    <text>搜索历史</text>
+                </view>
+                <view class="title_right" bindtap="delete">
+                    <view class="title_delete"></view>
+                    <text>删除</text>
+                </view>
+            </view>
+            <!--title end-->
+
+            <!--list start-->
+            <view class="current_list clear">
+                <view wx:for="{{SearchLog}}" wx:key="unique" data-json="{{item.data}}" wx:if="{{index<8}}" bindtap="bindClick" class="current_li current_move">
+                    <text>{{item.name}}</text>
+                </view>
+            </view>
+            <!--list end-->
+        </view>
+        <!--历史 end-->
+
+        <!--机场车站 start-->
+        <view class="current">
+            <!--title start-->
+            <view class="current_title">
+                <view class="title_left">
+                    <view class="title_icon flight"></view>
+                    <text>机场车站</text>
+                </view>
+            </view>
+            <!--title end-->
+
+            <!--list start-->
+            <view class="current_list clear">
+                <view wx:for="{{ListStationAirport}}" wx:key="unique" wx:if="{{index<7}}" class="current_li current_move" bindtap="bindClick" data-json="{{item.data}}">
+                    <text>{{item.name}}</text>
+                </view>
+                <view class="current_li" wx:if="{{ListStationAirport.length>=8}}" data-key="ListStationAirport" bindtap="bindGoDetail">
+                    <text class="move_btn">更多</text>
+                </view>
+                <view class="current_li" wx:if="{{ListStationAirport.length<8}}">
+                    <text class="move_btn"></text>
+                </view>
+            </view>
+            <!--list end-->
+        </view>
+        <!--机场车站 end-->
+
+        <!--商圈景点 start-->
+        <view class="current">
+            <!--title start-->
+            <view class="current_title">
+                <view class="title_left">
+                    <view class="title_icon spot"></view>
+                    <text>商圈景点</text>
+                </view>
+            </view>
+            <!--title end-->
+
+            <!--list start-->
+            <view class="current_list clear">
+                <view wx:for="{{ListHotelCircle}}" wx:key="unique" wx:if="{{index<7}}" data-json="{{item.data}}" class="current_li current_move" bindtap="bindClick">
+                    <text>{{item.name}}</text>
+                </view>
+                <view class="current_li" wx:if="{{ListHotelCircle.length>=8}}" data-key="ListHotelCircle" bindtap="bindGoDetail">
+                    <text class="move_btn">更多</text>
+                </view>
+                <view class="current_li" wx:if="{{ListHotelCircle.length<8}}">
+                    <text class="move_btn"></text>
+                </view>
+            </view>
+            <!--list end-->
+        </view>
+        <!--商圈景点 end-->
+
+        <!--地铁沿线 start-->
+        <view class="current">
+            <!--title start-->
+            <view class="current_title">
+                <view class="title_left">
+                    <view class="title_icon metro"></view>
+                    <text>地铁沿线</text>
+                </view>
+            </view>
+            <!--title end-->
+
+            <!--list start-->
+            <view class="current_list clear">
+                <view wx:for="{{ListSubway}}" wx:key="unique" wx:if="{{index<7}}" data-json="{{item.data}}" class="current_li current_move" bindtap="bindClick">
+                    <text>{{item.name}}</text>
+                </view>
+                <view class="current_li" wx:if="{{ListSubway.length>=8}}" data-key="ListSubway" bindtap="bindGoDetail">
+                    <text class="move_btn">更多</text>
+                </view>
+                <view class="current_li" wx:if="{{ListSubway.length<8}}">
+                    <text class="move_btn"></text>
+                </view>
+            </view>
+            <!--list end-->
+        </view>
+        <!--地铁沿线 end-->
+
+        <!--品牌连锁 start-->
+        <view class="current">
+            <!--title start-->
+            <view class="current_title">
+                <view class="title_left">
+                    <view class="title_icon brand"></view>
+                    <text>品牌连锁</text>
+                </view>
+            </view>
+            <!--title end-->
+
+            <!--list start-->
+            <view class="current_list clear">
+                <view wx:for="{{ListHotelGroup}}" wx:key="unique" wx:if="{{index<7}}" data-json="{{item.data}}" class="current_li current_move" bindtap="bindClick">
+                    <text>{{item.name}}</text>
+                </view>
+                <view class="current_li" wx:if="{{ListHotelGroup.length>=8}}" data-key="ListHotelGroup" bindtap="bindGoDetail">
+                    <text class="move_btn">更多</text>
+                </view>
+                <view class="current_li" wx:if="{{ListHotelGroup.length<8}}">
+                    <text class="move_btn"></text>
+                </view>
+            </view>
+            <!--list end-->
+        </view>
+        <!--品牌连锁 end-->
+
+        <!--行政区域 start-->
+        <view class="current">
+            <!--title start-->
+            <view class="current_title">
+                <view class="title_left">
+                    <view class="title_icon area"></view>
+                    <text>行政区域</text>
+                </view>
+            </view>
+            <!--title end-->
+
+            <!--list start-->
+            <view class="current_list clear">
+                
+                <view wx:for="{{ListCounty}}" wx:key="unique" wx:if="{{index<7}}" data-json="{{item.data}}" class="current_li current_move" bindtap="bindClick">
+                    <text>{{item.name}}</text>
+                </view>
+                <view class="current_li" wx:if="{{ListCounty.length>=8}}" data-key="ListCounty" bindtap="bindGoDetail">
+                    <text class="move_btn">更多</text>
+                </view>
+                <view class="current_li" wx:if="{{ListCounty.length<8}}">
+                    <text class="move_btn"></text>
+                </view>
+
+            </view>
+            <!--list end-->
+        </view>
+        <!--行政区域 end-->
+    </view>
+    <!--main end-->
+    <!--search start-->
+    <view class="main clear" hidden="{{!show_search}}">
+        <view class="search_li" wx:for="{{searchList}}" wx:key="unique"  wx:for-item="info" bindtap="bindClick" data-json="{{info.data}}">
+            <view style="float:left">
+                <text>{{info.name}}</text>
+            </view>
+            <view style="float:right">
+                <text class="search_type">{{info.keyWorldName}}</text>
+            </view>
+        </view>
+    </view>
+    <!--search end-->
+</view>

@@ -1,0 +1,152 @@
+<!--banner start-->
+<view class="banner">
+
+    <swiper
+    autoplay="false" interval="5000" duration="500" circular="true">
+    <block wx:for="{{HotelInfo.showList}}" wx:key="unique">
+       <swiper-item>
+        <image src="{{item.PicUrl}}" class="banner_img"/>
+        </swiper-item>
+    </block>
+    </swiper>
+
+    <!--<image wx:if="{{HotelInfo.imgLogo}}" src="{{HotelInfo.imgLogo}}" class="banner_img"></image>
+    <image wx:if="{{!HotelInfo.imgLogo}}" src="https://webapi.jsjinfo.cn/smallApp/hotel/banner.png" class="banner_img"></image>-->
+    <view class="banner_con">
+        <view class="banner_p">
+            <text class="banner_p_left">{{HotelInfo.HotelName}}({{HotelInfo.StartType}}）</text>
+            <text wx:if="{{HotelInfo.logoImagesLength>0}}" class="banner_p_right">{{HotelInfo.logoImagesLength}}张</text>
+        </view>
+    </view>
+</view>
+<!--banner end-->
+
+<!--main start-->
+<view class="main clear">
+    <!--details start-->
+    <view class="details">
+        <!--地址 start-->
+        <view class="details_con">
+            <view class="details_address">
+                <text>{{HotelInfo.Address}}</text>
+            </view>
+            <view class="details_range" style="display:none">
+                <text>北苑区域距您：0.5公里</text>
+            </view>
+        </view>
+        <!--地址 end-->
+
+        <!--酒店信息 start-->
+        <view class="details_con">
+            <view class="details_address">
+                <text>{{HotelInfo.OpeningDate}}年开业</text>
+                <text class="details_tel">{{HotelInfo.Phone}}</text>
+            </view>
+            <view class="details_cion">
+                <image wx:if="HotelInfo.IsHaveBroadband" src="https://webapi.jsjinfo.cn/smallApp/hotel/icon_tv.png" class="icon_img"></image>
+                <image wx:if="HotelInfo.IsHaveWiFi" src="https://webapi.jsjinfo.cn/smallApp/hotel/wifi.png" class="icon_img"></image>
+                <image wx:if="HotelInfo.IsHavePark" src="https://webapi.jsjinfo.cn/smallApp/hotel/icon_tcc.png" class="icon_img"></image>
+                <!--<image wx:if="HotelInfo.IsHavePark" src="https://webapi.jsjinfo.cn/smallApp/hotel/icon_nz.png" class="icon_img"></image>-->
+                <!--<image src="https://webapi.jsjinfo.cn/smallApp/hotel/icon_cfj.png" class="icon_img"></image>-->
+                <!--<image src="https://webapi.jsjinfo.cn/smallApp/hotel/icon_ly.png" class="icon_img"></image>-->
+                <image wx:if="HotelInfo.IsHaveRestaurant" src="https://webapi.jsjinfo.cn/smallApp/hotel/icon_zc.png" class="icon_img"></image>
+            </view>
+        </view>
+        <!--酒店信息 end-->
+    </view>
+    <!--details end-->
+
+    <!--房间 start-->
+    <view class="room clear">
+        <view class="room_date">
+            <text class="date_left">{{StartDate.Month}}月{{StartDate.Day}}日~{{EndtDate.Month}}月{{EndtDate.Day}}日</text>
+            <text class="date_right">共{{totalDays}}晚</text>
+        </view>
+
+        <!--房间列表 start-->
+        <view class="room_list clear">
+        <block wx:for="{{roomlist}}" wx:key="unique">
+            <view class="room_con" >
+                <!--房间 start-->
+                <view class="room_current room_hide">
+                    <view class="room_dt">
+                        <image wx:if="{{item.list[0].ListHotelCoverImg}}" src="{{item.list[0].ListHotelCoverImg[0].PicUrl}}" class="room_img"></image>
+                        <image wx:if="{{item.list[0].ListHotelCoverImg==null}}" src="https://webapi.jsjinfo.cn/smallApp/hotel/images.png" class="room_img"></image>
+                    </view>
+                    <view class="room_dd" data-index="{{index}}" bindtap="isShowDetail">
+                        <view class="room_dd_left">
+                            <view class="left_p">
+                                <text class="room_fx">{{item.list[0].RoomName}}</text>
+                                <text class="room_bh">（{{item.list[0].Breakfast}}）</text>
+                            </view>
+                            <view class="left_size">
+                                <text wx:if="{{item.list[0].RoomArea}}">{{item.list[0].RoomArea}}平米</text>
+                                <text>{{item.list[0].BedTypeName}}</text>
+                            </view>
+                            <view class="left_size">
+                                <text wx:if="{{item.list[0].IsHaveWindow}}">有窗</text>
+                                <text>{{item.list[0].WIFINAME}}</text>
+                            </view>
+                        </view>
+                        <view class="room_dd_right" hidden="{{!item.isShow}}">
+                            <text class="room_em">{{item.list[0].PriceTypeName}}</text>
+                            <text class="room_price">{{item.list[0].MemberPrice-item.list[0].MaxCashback}}</text>
+                            <text class="room_span">起</text>
+                        </view>
+                    </view>
+                </view>
+                <!--房间 end-->
+
+                <view class="room_content clear">
+
+                    <!--content_list end-->
+                    <view wx:for="{{item.list}}" wx:for-item="info" wx:key="unique" class="content_list" hidden="{{item.isShow}}">
+                        <view class="content_left">
+                            <view class="content_p">
+                                <text>{{info.RatePlanName}}</text>
+                            </view>
+                            <view class="content_span">
+                                <view class="content_price">
+                                    <text class="content_em">{{info.PriceTypeName}}</text>
+                                    <text class="content_jg">{{info.MemberPrice-info.MaxCashback}}</text>
+                                </view>
+                                <view wx:if="{{info.MaxCashback}}" class="content_yh">
+                                    <text>{{info.MemberPrice}}返{{info.MaxCashback}}</text>
+                                </view>
+                                
+                            </view>
+                        </view>
+                        <view class="content_right" catchtap="DetailToOrder" data-item="{{info.string}}">
+                            <view wx:if="{{info.RoomPayType==0}}" class="content_btn content_back">满</view>
+                            <view wx:elif="{{info.RoomPayType==1}}" class="content_btn">订</view>
+                            <view wx:elif="{{info.RoomPayType==2}}" class="content_btns">
+                                <text class="btns_y">订</text>
+                                <text class="btns_f">预付</text>
+                            </view>
+                            <view wx:elif="{{info.RoomPayType==3}}" class="content_btns">
+                                <text class="btns_y">订</text>
+                                <text class="btns_f">担保</text>
+                            </view>
+                            <!--<view wx:if="{{info.RoomInvStatus==1}}" class="content_btn">订</view>
+                            -->
+                            <!--<view class="content_btns">
+                                <text class="btns_y">订</text>
+                                <text class="btns_f">预付</text>
+                            </view>-->
+                            <!--<input type="button" id="" value="订" class="content_btn" />-->
+                        </view>
+                    </view>
+                    <!--content_list end-->
+                </view>
+
+            </view>
+            <!--room_con end-->
+        </block>
+            
+        </view>
+        <!--房间列表 end-->
+    </view>
+    <!--房间 end-->
+
+</view>
+<!--main end-->

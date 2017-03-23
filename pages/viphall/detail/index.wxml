@@ -1,0 +1,86 @@
+<!--main start-->
+<view class="main">
+    <!--banner start-->
+    <view class="banner">
+       	<block  wx:for="{{VipHallInfoBanner}}" wx:for-item="VipHallInfoBanner"  wx:for-index="idx" wx:key="">
+           <block wx:if="{{idx < 1 }}">
+           	<image src="{{VipHallInfoBanner.AttachPath}}" class="banner_img"></image>
+           </block>
+       	</block>
+        <view class="banner_price">
+            <view class="banner_title">
+                <text>价格</text>
+            </view>
+            <view class="banner_price_con">
+                <text class="banner_price_text">
+                    <text class="price_text">￥</text>{{VipHallInfo.SalePrice}}/人
+                </text>
+            </view>
+        </view>
+    </view>
+    <!--banner end-->
+
+
+    <!--content start-->
+	  <view class="content clear">
+        <!--位置 start-->
+        <view class="position">
+            <view class="position_p">
+                <view class="position_left">
+                    <image src="https://webapi.jsjinfo.cn/smallApp/viphall/icon_posi.png" class="icon_time"></image><text>{{VipHallInfo.NetworkBusinessHour}}</text>
+                </view>
+                <view class="position_right" style="display:none;">
+                    <image src="https://webapi.jsjinfo.cn/smallApp/viphall/icon_posi1.png" class="icon_time"></image><text>{{VipHallInfo.Distance}}公里</text>
+                </view>
+            </view>
+            <view class="position_p">
+                <view class="position_p_span">
+                    <image src="https://webapi.jsjinfo.cn/smallApp/viphall/icon_posi2.png" class="icon_time"></image><text class="p_span_width">{{VipHallInfo.Address}}（{{VipHallInfo.SecurityCheckLocation}}）</text>
+                </view>	    			
+            </view>
+        </view>
+        <!--位置 end-->
+
+        <!--介绍  start-->
+        <view class="introduce clear">
+            <text>设计主题：{{VipHallInfo.Remark}}</text>
+        </view>
+        <!--介绍 end-->
+
+        <!--应用 start-->
+        <view class="application clear">
+          <view class="application_dl" wx:for="{{VipHallInfoImg}}" wx:for-item="VipHallInfoImg"  wx:for-index="idx" wx:key="">
+            <view class="application_dt">
+                <image src="{{VipHallInfoImg.IconPath}}" class="icon_use"></image>
+            </view>
+            <view class="application_dd">
+                <text>{{VipHallInfoImg.AuxTypeName}}</text>
+            </view>
+          </view>
+        </view>
+        <!--应用 end-->
+
+        <!--服务详情 start-->
+        <view class="service_details">
+            <view class="service_title">
+                <text>服务详情</text>
+            </view>
+            
+            <view class="service_con" wx:for="{{VIPHallImagesDesc}}"  wx:for-item="VIPHallImagesDesc"  wx:for-index="idx" wx:key="">
+							<image src="{{VIPHallImagesDesc.ImageURL}}" class="service_img"></image>
+							<text>{{VIPHallImagesDesc.ImageDesc}}</text>  
+						</view>
+        </view>
+        <!--服务详情 end-->
+        
+    </view>
+    <!--content end-->
+
+</view>
+<!--main end-->
+
+<!--footer_btn start-->
+<view class="footer_btn">
+   <button type="default" class="footer_btn_tel" bindtap="calling" > 预订热线：{{VipHallInfo.CustomerServiceTel}} </button>
+</view>
+<!--footer_btn end-->
